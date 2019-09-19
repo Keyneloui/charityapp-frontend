@@ -46,7 +46,7 @@
 						+ requestId + "&requestAmount=" + requestAmount;
 				console.log(formData);
 
-				var url = "http://localhost:8080/charity/AddRequest?"
+				var url = "http://localhost:8080/mavenwebb/AddRequest?"
 						+ formData;
 				console.log(url);
 				//alert(url);

@@ -46,7 +46,7 @@
 			var formData = "email_id=" + email_id + "&password=" + password;
 			console.log(formData);
 			//alert(formData);
-			var url = "http://localhost:8080/charity/AdminLogin?" + formData;
+			var url = "http://localhost:8080/mavenwebb/AdminLogin?" + formData;
 			console.log(url);
 			//alert(url);
 			var formData = {};

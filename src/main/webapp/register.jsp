@@ -47,7 +47,7 @@
 			var formData = "name=" + name + "&email_id=" + email_id
 					+ "&password=" + password;
 			console.log(formData);
-			var url = "http://localhost:8080/charity/RegisterServlet?"
+			var url = "http://localhost:8080/mavenwebb/RegisterServlet?"
 					+ formData;
 			console.log(url);
 			var formData = {};

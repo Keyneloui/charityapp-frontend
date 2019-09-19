@@ -44,7 +44,7 @@
 			var formData = "email_id=" + email_id + "&password=" + password;
 			console.log(formData);
 			//alert(formData);
-			var url = "http://localhost:8080/charity/Logintest?" + formData;
+			var url = "http://localhost:8080/mavenwebb/Logintest?" + formData;
 			console.log(url);
 			//alert(url);
 			var formData = {};

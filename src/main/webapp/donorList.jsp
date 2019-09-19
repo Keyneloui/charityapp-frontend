@@ -10,7 +10,7 @@
 
 function loadBooks()
 {
-	var url = "http://localhost:8080/charity/DonorListServlet";
+	var url = "http://localhost:8080/mavenwebb/DonorListServlet";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";

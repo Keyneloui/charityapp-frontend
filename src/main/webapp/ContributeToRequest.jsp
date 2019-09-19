@@ -42,7 +42,7 @@
 			console.log(formData);
 			//	alert(formData);
 
-			var url = "http://localhost:8080/charity/ContributeRequest?"
+			var url = "http://localhost:8080/mavenwebb/ContributeRequest?"
 					+ formData;
 			console.log(url);
 			//	alert(url);

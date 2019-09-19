@@ -11,7 +11,7 @@ function loadBooks()
 {
 	//http://localhost:8080/charity/AddRequest?requestType=a&requestId=5&requestAmount=100
 	//$.post ... url, form data , response ( success/failure)
-	var url = "http://localhost:8080/charity/ListRequests";
+	var url = "http://localhost:8080/mavenwebb/ListRequests";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";

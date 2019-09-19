@@ -42,7 +42,7 @@
 						 + "&requestAmount=" + requestAmount;
 				console.log(formData);
 
-				var url = "http://localhost:8080/charity/UpdateRequest?"
+				var url = "http://localhost:8080/mavenwebb/UpdateRequest?"
 						+ formData;
 				console.log(url);
 				//alert(url);

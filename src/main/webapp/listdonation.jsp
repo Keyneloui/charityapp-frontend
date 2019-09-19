@@ -9,7 +9,7 @@
 <script>
 function loadBooks()
 {
-	var url = "http://localhost:8080/charity/ListRequests";
+	var url = "http://localhost:8080/mavenwebb/ListRequests";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";
