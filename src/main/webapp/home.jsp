@@ -20,6 +20,6 @@
 	<a href="ContributeToRequest.jsp">Contribute to our Request</a>
 	<br/>
 	<br/>
-	<a href="header.jsp"><h2>Logout</h2></a>
+	<a href="homePage.jsp"><h2>Logout</h2></a>
 </body>
 </html>

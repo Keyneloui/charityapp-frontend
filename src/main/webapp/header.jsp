@@ -24,13 +24,21 @@
 
 
 
-				<li class="nav-item"><a class="nav-link" href="adminlogin.jsp">Admin
+				<!--<li class="nav-item"><a class="nav-link" href="adminlogin.jsp">Admin
 						Login</a></li>
 				<li class="nav-item"><a class="nav-link" href="donorlog.jsp">Donor
 						Login</a></li>
 				<li class="nav-item"><a class="nav-link" href="register.jsp">Donor
-						Register</a></li>
-
+						Register</a></li>-->
+              <li class="nav-item">
+          <a class="nav-link" href="?pageName=adminlogin.jsp">Admin Login <span class="sr-only">(current)</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="?pageName=donorlog.jsp">Donor Login <span class="sr-only">(current)</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="?pageName=register.jsp">Donor Registration<span class="sr-only">(current)</span></a>
+        </li>
 
 				<!--   <li class="nav-item">
           <a class="nav-link" href="listdonation.jsp">List Donation</a>

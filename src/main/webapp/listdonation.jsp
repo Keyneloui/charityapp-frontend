@@ -37,6 +37,9 @@ function loadBooks()
 	<h2>Our Request</h2>
 	
 	<form onsubmit="loadBooks()"></form>
+	<div class="view" id="view">
+       
+    </div>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
