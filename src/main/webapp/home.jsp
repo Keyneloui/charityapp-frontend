@@ -20,7 +20,13 @@
 	<a href="?pageName=ContributeToRequest.jsp">Contribute to our Request</a>
 	<br/>
 	<br/>
-	<button type="reset" class="btn btn-danger" value="clear">Log out <a href="?pageName=hello.jsp"></a>
-		</button>
+	<input type="button" value="Logout" class="btn btn-danger"  onclick="logout()">
+		
+		<script>
+		function logout()
+		{
+			localStorage.clear();
+			window.location.href="?pageName=hello.jsp"}
+		</script>
 </body>
 </html>

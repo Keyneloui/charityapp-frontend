@@ -25,7 +25,7 @@
 			name="requestId" id="requestId" placeholder="Enter requestId"
 			required autofocus /> <br /> 
 		<label>Request Type:</label> <input type="text" name="requestType"
-			id="requestType" placeholder="Enter requestType" required  />
+			id="requestType" placeholder="Enter requestType" required autofocus />
 		<br /> <label>Request Amount:</label> <input
 			type="number" name="requestAmount" id="requestAmount"
 			placeholder="Enter amount" required /> <br /> <input type="submit"
