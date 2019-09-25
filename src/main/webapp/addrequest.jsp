@@ -32,7 +32,7 @@
 			value="Submit" class="btn btn-success">&nbsp;
 		<button type="reset" class="btn btn-danger" value="clear">clear
 		</button>
-		<br /> <a href="index.jsp">Home</a>
+		<br /> <a href="?pageName=index.jsp">Home</a>
 
 		<!-- Script -->
 
@@ -63,7 +63,7 @@
 						alert("Request Type exists");
 					} else {
 						//alert("valid Username/Password");
-						window.location.href = "index.jsp";
+						window.location.href = "?pageName=index.jsp";
 					}
 
 				});

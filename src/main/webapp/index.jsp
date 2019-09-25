@@ -11,17 +11,25 @@
 	<br />
 	<br />
 
-
-	<a href="listdonation.jsp"> Our Donations</a>
+             
+    <form onsubmit="register()">
+	  <a href="?pageName=listdonation.jsp"> Our Donations</a>
 	<br />
-	<a href="addrequest.jsp"> Add Donations</a>
+	<a href="?pageName=addrequest.jsp"> Add Donations</a>
 	<br />
-	<a href="updateRequest.jsp">Update Donation</a>
+	<a href="?pageName=updateRequest.jsp">Update Donation</a>
 	<br />
-	<a href="donorList.jsp"> Donor List</a>
+	<a href="?pageName=donorList.jsp"> Donor List</a>
 	<br />
 	<br/>
-	<a href="header.jsp"><h2>LogOut</h2></a>
+	<input type="button" value="Logout" class="btn btn-danger"  onclick="logout()">
+		
+		<script>
+		function logout()
+		{
+			localStorage.clear();
+			window.location.href="?pageName=hello.jsp"}
+		</script>
 	
 	
 	

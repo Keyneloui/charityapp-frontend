@@ -22,18 +22,16 @@
 		}
 	</script>
 	<form onsubmit="register()">
-	<br />
-	<br />
-	<br />
-		<label>Name:</label> <input type="text" name="Name" id="name"
-			placeholder="Enter Name" required autofocus /> <br /> <label>Email:</label>
-		<input type="email" name="email" id="email" placeholder="Enter Email"
-			required /> <br /> <label>Password:</label> <input type="password"
-			name="pass" id="password" placeholder="Enter Password" required /> <br />
-		<input type="submit" value="Submit" class="btn btn-success">&nbsp;
+		<br /> <br /> <br /> <label>Name:</label> <input type="text"
+			name="Name" id="name" placeholder="Enter Name" required autofocus />
+		<br /> <label>Email:</label> <input type="email" name="email"
+			id="email" placeholder="Enter Email" required /> <br /> <label>Password:</label>
+		<input type="password" name="pass" id="password"
+			placeholder="Enter Password" required /> <br /> <input
+			type="submit" value="Submit" class="btn btn-success">&nbsp;
 		<button type="reset" class="btn btn-danger" value="clear">clear
 		</button>
-		<br /> Existing User ? <a href="donorlog.jsp">Login</a> <br />
+		<br /> Existing User ? <a href="?pageName=donorlog.jsp">Login</a> <br />
 
 
 	</form>
@@ -46,15 +44,13 @@
 
 			var formData = "name=" + name + "&email_id=" + email_id
 					+ "&password=" + password;
+
 			console.log(formData);
 			var url = "http://localhost:8080/mavenwebb/RegisterServlet?"
 					+ formData;
 			console.log(url);
 			var formData = {};
-			$
-					.get(
-							url,
-							function(response) {
+			$.get(url,function(response) {
 								console.log(response);
 								console.log(response.errorMessage);
 								var msg = JSON.parse(response);
@@ -64,7 +60,7 @@
 									alert("Email,Name already exists\nRegister with a new Email and Name");
 								} else {
 									//alert("valid Username/Password");
-									window.location.href = "home.jsp";
+									window.location.href = "?pageName=home.jsp";
 								}
 							});
 		}

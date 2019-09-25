@@ -60,7 +60,7 @@
 					alert("Invalid Username/Password");
 				} else {
 					//alert("valid Username/Password");
-					window.location.href = "index.jsp";
+					window.location.href = "?pageName=index.jsp";
 				}
 			});
 		}

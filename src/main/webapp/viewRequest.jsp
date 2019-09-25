@@ -63,8 +63,8 @@ function loadBooks()
 loadBooks();
 </script>
 
-	<a href="home.jsp">Main Function</a>
-	<a href="ContributeToRequest.jsp">Contribute</a>
+	<a href="?pageName=home.jsp">Main Function</a>
+	<a href="?pageName=ContributeToRequest.jsp">Contribute</a>
 	<br />
 </body>
 </html>

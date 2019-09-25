@@ -59,7 +59,7 @@
 					alert("Invalid Username/Password......Kindly Register");
 				} else {
 					//alert("valid Username/Password");
-					window.location.href = "home.jsp";
+					window.location.href = "?pageName=home.jsp";
 				}
 			});
 		}

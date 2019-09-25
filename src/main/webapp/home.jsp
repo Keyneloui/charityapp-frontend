@@ -15,11 +15,12 @@
 	<br />
 
 	
-	<a href="viewRequest.jsp"> Our Donations</a>
+	<a href="?pageName=viewRequest.jsp"> Our Donations</a>
 	<br />
-	<a href="ContributeToRequest.jsp">Contribute to our Request</a>
+	<a href="?pageName=ContributeToRequest.jsp">Contribute to our Request</a>
 	<br/>
 	<br/>
-	<a href="homePage.jsp"><h2>Logout</h2></a>
+	<button type="reset" class="btn btn-danger" value="clear">Log out <a href="?pageName=hello.jsp"></a>
+		</button>
 </body>
 </html>

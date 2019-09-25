@@ -28,7 +28,7 @@
 		<button type="reset" class="btn btn-danger" value="clear">clear
 		</button>
 
-		<a href="home.jsp">Home</a>
+		<a href="?pageName=home.jsp">Home</a>
 	</form>
 	<script>
 		function loadBooks() {
@@ -61,7 +61,7 @@
 									//alert("valid Username/Password");
 									alert("Thank You for your contribution");
 									
-									window.location.href = "home.jsp";
+									window.location.href = "?pageName=home.jsp";
 								}
 							});
 

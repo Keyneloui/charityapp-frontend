@@ -15,8 +15,7 @@
 	<br />
   
 	
-	<p><h1>Hi,Welcome to Revature Charity!</h1></p>
-	<p><h2>"Be charitable and indulgent to everyone but yourself"</h2></p>
+	
 	 <%
             String pageName = request.getParameter("pageName");
 

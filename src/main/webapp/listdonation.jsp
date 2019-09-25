@@ -63,8 +63,8 @@ function loadBooks()
 loadBooks();
 </script>
 
-	<a href="index.jsp">Main Function</a>
-	<a href="addrequest.jsp">Add Request</a>
+	<a href="?pageName=index.jsp">Main Function</a>
+	<a href="?pageName=addrequest.jsp">Add Request</a>
 	<br />
 
 </body>
