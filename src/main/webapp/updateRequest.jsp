@@ -18,6 +18,7 @@
 	<br />
 	<br />
 	<br />
+	<div class=container>
 	<h3>Update Donation</h3>
 	<form onsubmit="loadBooks()">
 
@@ -26,15 +27,19 @@
 			<option>Education</option>
 			<option>Others</option>
 			</select> <br />
+			<br/>
 			<label>Enter the amount you want to add:</label>
 			<input type="number" name="requestAmount" id="requestAmount"
 			placeholder="Enter amount" required />
 			<br />
+			<br/>
 			<input type="submit" value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
 			<br />
-			<a href="?pageName=index.jsp">Home</a>
+			<br/>
+			</form>
+			</div>
 
 			<!-- Script -->
 

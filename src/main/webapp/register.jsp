@@ -13,6 +13,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
 </head>
+
 <body style="text-align: center">
 
 
@@ -49,12 +50,72 @@ and at least 8 or more characters"
 	</div>
 	<div id="message">
   <h3>Password must contain the following:</h3>
-  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-  <p id="number" class="invalid">A <b>number</b></p>
-  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+  <h6 id="letter" class="invalid">A <b>lowercase</b> letter</h6>
+  <h6 id="capital" class="invalid">A <b>capital (uppercase)</b> letter</h6>
+  <h6 id="number" class="invalid">A <b>number</b></h6>
+  <h6id="length" class="invalid">Minimum <b>8 characters</b></h6>
 </div>
-				
+		<script>
+		var password=document.getElementById("password");
+		var letter = document.getElementById("letter");
+		var capital = document.getElementById("capital");
+		var number = document.getElementById("number");
+		var length = document.getElementById("length");
+		// When the user clicks on the password field, show the message box
+		password.onfocus = function() {
+		  document.getElementById("message").style.display = "block";
+		}
+
+		// When the user clicks outside of the password field, hide the message box
+		password.onblur = function() {
+		  document.getElementById("message").style.display = "none";
+		}
+					
+
+
+		// When the user starts to type something inside the password field
+		password.onkeyup = function() {
+		  // Validate lowercase letters
+		  var lowerCaseLetters = /[a-z]/g;
+		  if(password.value.match(lowerCaseLetters)) {  
+		    letter.classList.remove("invalid");
+		    letter.classList.add("valid");
+		  } else {
+		    letter.classList.remove("valid");
+		    letter.classList.add("invalid");
+		  }
+		  
+		  // Validate capital letters
+		  var upperCaseLetters = /[A-Z]/g;
+		  if(password.value.match(upperCaseLetters)) {  
+		    capital.classList.remove("invalid");
+		    capital.classList.add("valid");
+		  } else {
+		    capital.classList.remove("valid");
+		    capital.classList.add("invalid");
+		  }
+
+		  // Validate numbers
+		  var numbers = /[0-9]/g;
+		  if(password.value.match(numbers)) {  
+		    number.classList.remove("invalid");
+		    number.classList.add("valid");
+		  } else {
+		    number.classList.remove("valid");
+		    number.classList.add("invalid");
+		  }
+		  
+		  // Validate length
+		  if(password.value.length >= 8) {
+		    length.classList.remove("invalid");
+		    length.classList.add("valid");
+		  } else {
+		    length.classList.remove("valid");
+		    length.classList.add("invalid");
+		  }
+		}
+	
+		</script>		
 	
 	
 	<script>
@@ -63,64 +124,7 @@ and at least 8 or more characters"
 			var name = document.getElementById("name").value;
 			var email_id = document.getElementById("email").value;
 			var password = document.getElementById("password").value;
-			var letter = document.getElementById("letter");
-			var capital = document.getElementById("capital");
-			var number = document.getElementById("number");
-			var length = document.getElementById("length");
-			// When the user clicks on the password field, show the message box
-			myInput.onfocus = function() {
-			  document.getElementById("message").style.display = "block";
-			}
-
-			// When the user clicks outside of the password field, hide the message box
-			myInput.onblur = function() {
-			  document.getElementById("message").style.display = "none";
-			}
-						
-
-
-			// When the user starts to type something inside the password field
-			password.onkeyup = function() {
-			  // Validate lowercase letters
-			  var lowerCaseLetters = /[a-z]/g;
-			  if(password.value.match(lowerCaseLetters)) {  
-			    letter.classList.remove("invalid");
-			    letter.classList.add("valid");
-			  } else {
-			    letter.classList.remove("valid");
-			    letter.classList.add("invalid");
-			  }
-			  
-			  // Validate capital letters
-			  var upperCaseLetters = /[A-Z]/g;
-			  if(password.value.match(upperCaseLetters)) {  
-			    capital.classList.remove("invalid");
-			    capital.classList.add("valid");
-			  } else {
-			    capital.classList.remove("valid");
-			    capital.classList.add("invalid");
-			  }
-
-			  // Validate numbers
-			  var numbers = /[0-9]/g;
-			  if(password.value.match(numbers)) {  
-			    number.classList.remove("invalid");
-			    number.classList.add("valid");
-			  } else {
-			    number.classList.remove("valid");
-			    number.classList.add("invalid");
-			  }
-			  
-			  // Validate length
-			  if(password.value.length >= 8) {
-			    length.classList.remove("invalid");
-			    length.classList.add("valid");
-			  } else {
-			    length.classList.remove("valid");
-			    length.classList.add("invalid");
-			  }
-			}
-
+			
 			var formData = "name=" + name + "&email_id=" + email_id
 					+ "&password=" + password;
 

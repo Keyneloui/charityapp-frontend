@@ -12,17 +12,23 @@
 	<br />
 
              
-    <form onsubmit="register()">
-	  <a href="?pageName=listdonation.jsp"> Our Donations</a>
+  
+	  <a href="?pageName=listdonation.jsp"><h4> <font color="white">Our Requests</a>
 	<br />
-	<a href="?pageName=addrequest.jsp"> Add Donations</a>
 	<br />
-	<a href="?pageName=updateRequest.jsp">Update Donation</a>
+	
+	<a href="?pageName=addrequest.jsp"> <font color="white">Add Requests</a>
 	<br />
-	<a href="?pageName=donorList.jsp"> Donor List</a>
+	<br />
+	
+	<a href="?pageName=updateRequest.jsp"><font color="white">Update Requests</a>
+	<br />
+	<br />
+	
+	<a href="?pageName=donorList.jsp"> <font color="white">Donor List</a>
 	<br />
 	<br/>
-	<input type="button" value="Logout" class="btn btn-danger"  onclick="logout()">
+	<!--  <input type="button" value="Logout" class="btn btn-danger"  onclick="logout()">
 		
 		<script>
 		function logout()
@@ -30,7 +36,7 @@
 			localStorage.clear();
 			window.location.href="?pageName=hello.jsp"}
 		</script>
-	
+	-->
 	
 	
 

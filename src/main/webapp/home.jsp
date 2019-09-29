@@ -17,11 +17,13 @@
 	<br />
 
 	
-	<a href="?pageName=viewRequest.jsp"> Our Donations</a>
+	<a href="?pageName=viewRequest.jsp"> <h4><font color="white">Fund requests</a>
 	<br />
-	<a href="?pageName=ContributeToRequest.jsp">Contribute to our Request</a>
+	<br/>
+	<a href="?pageName=ContributeToRequest.jsp"><font color="white">Contribute to our Request</font></a>
 	<br/>
 	<br/>
+	<a href="?pageName=mydonations.jsp"><font color="white">My Donations</h4></font></a>
 	<!--  <input type="button" value="Logout" class="btn btn-danger"  onclick="logout()">
 		
 		<script>

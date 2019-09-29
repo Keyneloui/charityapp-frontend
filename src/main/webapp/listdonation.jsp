@@ -35,11 +35,12 @@ function loadBooks()
 	<br />
 	<br />
 	<br />
-	<h2>Our Request</h2>
+	
 
 	<form onsubmit="loadBooks()"></form>
 	<div class="view" id="view"></div>
 	<div class="container">
+	<h2>Our Request</h2>
 		<div class="row">
 			<div class="col">
 				<div align="left">
@@ -63,7 +64,6 @@ function loadBooks()
 loadBooks();
 </script>
 
-		<a href="?pageName=index.jsp">Main Function</a> <a
-			href="?pageName=addrequest.jsp">Add Request</a> <br />
+		
 </body>
 </html>

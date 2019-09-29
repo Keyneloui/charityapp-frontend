@@ -19,20 +19,23 @@
 	<br />
 	<br />
 	<br />
+	<div class=container>
 	<h3>Add Donation</h3>
 	<form onsubmit="loadBooks()">
 
 		<label>Request Id:</label><input type="number" name="requestId"
-			id="requestId" placeholder="Enter requestId" required autofocus /> <br />
+			id="requestId" placeholder="Enter requestId" required autofocus /> <br /><br/>
 		<label>Request Type:</label> <input type="text" name="requestType"
 			id="requestType" placeholder="Enter requestType" required autofocus />
-		<br /> <label>Request Amount:</label> <input type="number"
+		<br /> <br/><label>Request Amount:</label> <input type="number"
 			name="requestAmount" id="requestAmount" placeholder="Enter amount"
-			required /> <br /> <input type="submit" value="Submit"
+			required /> <br /> <br/><input type="submit" value="Submit"
 			class="btn btn-success">&nbsp;
 		<button type="reset" class="btn btn-danger" value="clear">clear
 		</button>
-		<br /> <a href="?pageName=index.jsp">Home</a>
+		<br /> <br/>
+		</form>
+		</div>
 
 		<!-- Script -->
 

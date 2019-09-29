@@ -38,9 +38,10 @@ function loadBooks()
 	<br />
 	<br />
 	<br />
-	<h2>Donor List</h2>
+	
 	<form onsubmit="loadBooks()"></form>
 	<div class="container">
+	<h2>Donor List</h2>
 		<div class="row">
 			<div class="col">
 			<div align="left">
@@ -52,7 +53,7 @@ function loadBooks()
 
 							<th>Name</th>
 							<th>Request Type</th>
-							<th>Request Amount</th>
+							<th> Amount Funded</th>
 						</tr>
 					</thead>
 					<tbody id="tbody">

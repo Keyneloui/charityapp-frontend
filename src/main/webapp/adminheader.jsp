@@ -25,9 +25,7 @@
 			<ul class="navbar-nav mr-auto">
 
 
-				<li class="nav-item"><a class="nav-link"
-					href="?pageName=hello.jsp">Log out <span
-						class="sr-only">(current)</span></a></li>
+				
 						<li class="nav-item"><a class="nav-link"
 					href="?pageName=listdonation.jsp">Our Requests <span class="sr-only">(current)</span></a>
 				</li>
@@ -39,6 +37,9 @@
 						class="sr-only">(current)</span></a></li>
 						<li class="nav-item"><a class="nav-link"
 					href="?pageName=donorList.jsp">Donor List<span
+						class="sr-only">(current)</span></a></li>
+						<li class="nav-item"><a class="nav-link"
+					href="?pageName=hello.jsp">Log out <span
 						class="sr-only">(current)</span></a></li>
 		</div>
 	</nav>

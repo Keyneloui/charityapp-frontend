@@ -4,15 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>View Requests</title>
+<title>Donor List</title>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
+
 function loadBooks()
 {
-	//http://localhost:8080/charity/AddRequest?requestType=a&requestId=5&requestAmount=100
-	//$.post ... url, form data , response ( success/failure)
-	var url = "http://localhost:8080/mavenwebb/ListRequests";
+	var url = "http://localhost:8080/mavenwebb/DonorListServlet";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";
@@ -20,9 +19,10 @@ function loadBooks()
 		    for(let dr of list){
 		        console.log(list);
 		        content += "<tr>";
-		        content += "<td>" + dr.id + "</td>";
+		      
+		        content += "<td>" + dr.name + "</td>";
 		        content += "<td>" + dr.requestType + "</td>";
-		        content += "<td>" + dr.requestAmount + "</td>";
+		        content += "<td>" + dr.amount + "</td>";
 		        content += "</tr>";
 		    }
 		    console.log(content); 
@@ -31,39 +31,45 @@ function loadBooks()
 		});
 }
 </script>
-</head>
 
+</head>
 <body style="text-align: center">
 	<jsp:include page="donorheader.jsp"></jsp:include>
 	<br />
 	<br />
 	<br />
 	
-
 	<form onsubmit="loadBooks()"></form>
 	<div class="container">
-	<h2>Fund Requests</h2>
+	<h2>Donor List</h2>
 		<div class="row">
 			<div class="col">
-				<div align="left">
+			<div align="left">
 
-					<table border="1" class="table table-condensed" id="tbl">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th> Type</th>
-								<th> Amount</th>
-							</tr>
-						</thead>
-						<tbody id="tbody">
+				<table border="1" class="table table-condensed" id="tbl">
+				
+					<thead>
+						<tr>
 
-						</tbody>
-					</table>
+							<th>Name</th>
+							<th>Request Type</th>
+							<th> Amount Funded</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+
+					</tbody>
+				</table>
 				</div>
 			</div>
 		</div>
-		<script>
+	</div>
+	<script>
 loadBooks();
 </script>
+
+	
+	<br />
+
 </body>
 </html>
