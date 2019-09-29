@@ -7,6 +7,7 @@
 <title>Login</title>
 <title>REVATURE CHARITY TRUST</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
 </head>
@@ -16,29 +17,29 @@
 	<br />
 	<br />
 	<br />
+	
+	
+	<div id="result"></div>
+	<div class="container">
 	<h2>Donor Login</h2>
-	<script type="text/javascript">
-		function login() {
-			alert("Logged successfully");
-			window.location.href = "viewRequest.jsp";
-		}
-	</script>
 	<form onsubmit="register()">
 		<label>Email:</label> <input type="email" name="email_id"
-			id="email_id" placeholder="Enter Email" required autofocus /> <br />
+			id="email_id" placeholder="Enter Email" required autofocus /><br/> <br />
 		<label>Password:</label> <input type="password" name="password"
-			id="password" placeholder="Enter Password" required /> <br /> <input
+			id="password" placeholder="Enter Password" required /> <br /><br/> <input
 			type="submit" value="Submit" class="btn btn-success">&nbsp;
 		<button type="reset" class="btn btn-danger" value="clear">clear
 		</button>
 		<br />
 	</form>
+	</div>
 	<script>
 		function register() {
 			//alert('register');
 			event.preventDefault();
 
 			var email_id = document.getElementById("email_id").value;
+			 localStorage.setItem("email",email_id.value);
 			var password = document.getElementById("password").value;
 
 			var formData = "email_id=" + email_id + "&password=" + password;

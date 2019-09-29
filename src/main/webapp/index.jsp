@@ -6,7 +6,7 @@
 <body style="text-align: center">
 
 
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="adminheader.jsp"></jsp:include>
 	<br />
 	<br />
 	<br />

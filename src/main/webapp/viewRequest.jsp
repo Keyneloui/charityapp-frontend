@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>View Requests</title>
+<link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
 function loadBooks()
@@ -33,38 +34,35 @@ function loadBooks()
 </head>
 
 <body style="text-align: center">
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="donorheader.jsp"></jsp:include>
 	<br />
 	<br />
 	<br />
 	<h2>Request</h2>
-	
+
 	<form onsubmit="loadBooks()"></form>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			<div class="col">
-				
-				<table border="1" class="table table-condensed" id="tbl">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>RequestType</th>
-							<th>RequestAmount</th>
-						</tr>
-					</thead>
-					<tbody id="tbody">
+				<div align="left">
 
-					</tbody>
-				</table>
+					<table border="1" class="table table-condensed" id="tbl">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Request Type</th>
+								<th>Request Amount</th>
+							</tr>
+						</thead>
+						<tbody id="tbody">
+
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-	</div>
-	<script>
+		<script>
 loadBooks();
 </script>
-
-	<a href="?pageName=home.jsp">Main Function</a>
-	<a href="?pageName=ContributeToRequest.jsp">Contribute</a>
-	<br />
 </body>
 </html>

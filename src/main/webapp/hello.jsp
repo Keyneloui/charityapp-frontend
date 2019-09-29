@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Charity</title>
 </head>
-<body>
+
+<body >
 <br/>
 <br/>
 <br/>
 
-<p><h1>Hi,Welcome to Revature Charity!</h1></p>
-	<p><h2>"Be charitable and indulgent to everyone but yourself"</h2></p>
+   <font color="white"><p><h1>Hi,Welcome to Revature Charity!</h1></p>
+	<p><h2>"Be charitable and indulgent to everyone but yourself"</h2></p></font>
 </body>
 </html>

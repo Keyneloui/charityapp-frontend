@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="ISO-8859-1">
 <head>
 <title>REVATURE CHARITY TRUST</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,17 +25,16 @@
 
 
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=adminlogin.jsp">Admin Login <span
+					href="?pageName=hello.jsp">Log out <span
 						class="sr-only">(current)</span></a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=donorlog.jsp">Donor Login <span class="sr-only">(current)</span></a>
+					href="?pageName=ContributeToRequest.jsp">Contribute <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=register.jsp">Donor Registration<span
-						class="sr-only">(current)</span></a></li> -->
+					href="?pageName=viewRequest.jsp">Our Request<span
+						class="sr-only">(current)</span></a></li>
 		</div>
 	</nav>
 
-</header>
 
 </html>

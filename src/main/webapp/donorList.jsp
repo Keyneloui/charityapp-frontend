@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Donor List</title>
+<link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
 
@@ -30,19 +31,22 @@ function loadBooks()
 		});
 }
 </script>
+
 </head>
 <body style="text-align: center">
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="adminheader.jsp"></jsp:include>
 	<br />
 	<br />
 	<br />
 	<h2>Donor List</h2>
 	<form onsubmit="loadBooks()"></form>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			<div class="col">
+			<div align="left">
 
 				<table border="1" class="table table-condensed" id="tbl">
+				
 					<thead>
 						<tr>
 
@@ -55,6 +59,7 @@ function loadBooks()
 
 					</tbody>
 				</table>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -62,8 +67,7 @@ function loadBooks()
 loadBooks();
 </script>
 
-	<a href="?pageName=index.jsp">Main Function</a>
-
+	
 	<br />
 
 </body>

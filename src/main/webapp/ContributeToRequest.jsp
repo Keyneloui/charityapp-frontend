@@ -4,38 +4,45 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Contribute to Requests</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body style="text-align: center">
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="donorheader.jsp"></jsp:include>
 	<br />
 	<br />
 	<br />
 	
-	<form onsubmit="loadBooks()">
-		<label>Email Id:</label> <input type="email" name="emailId"
-			id="emailId" placeholder="Enter email Id" required autofocus /> <br />
-		<label>Request Type:</label> <input type="text" name="requestType"
-			id="requestType" placeholder="Enter requestType" required /> <br />
 
-		<label>Amount You Want to Contribute:</label> <input type="number"
-			name="requestAmount" id="requestAmount" placeholder="Enter amount"
-			required /> <br /> <input type="submit" value="Submit"
-			class="btn btn-success">&nbsp;
+	<div id="result"></div>
+	
+
+	<form onsubmit="loadBooks()">
+		<!--  <label>Email Id:</label> <input type="email" name="emailId"
+			id="emailId" placeholder="Enter email Id" required autofocus /> --><br />
+		<label>Request Type</label> <select id="mySelect"><option>Food</option>
+			<option>Medicine</option>
+			<option>Education</option>
+			<option>Others</option> 
+		</select > <br /> <label>Amount You Want to Contribute:</label> <input
+			type="number" name="requestAmount" id="requestAmount"
+			placeholder="Enter amount" min="1" max="20000" required /> <br /> <input
+			type="submit" value="Submit" class="btn btn-success">&nbsp;
 		<button type="reset" class="btn btn-danger" value="clear">clear
 		</button>
 
 		<a href="?pageName=home.jsp">Home</a>
 	</form>
+	<!-- Scriplets -->
 	<script>
 		function loadBooks() {
 			event.preventDefault();
 			//alert('entering');
-			var requestType = document.getElementById("requestType").value;
-			var emailId = document.getElementById("emailId").value;
+			var requestType = document.getElementById("mySelect").value;
+			var emailId = localStorage.getItem("email");
+		//	var storedValue = localStorage.getItem("email");
 			var requestAmount = document.getElementById("requestAmount").value;
 			var formData = "requestType=" + requestType + "&emailId=" + emailId
 					+ "&requestAmount=" + requestAmount;
@@ -48,7 +55,10 @@
 			//	alert(url);
 			var formData = {};
 			//	alert(formData);
-			$.get(url,function(response) {
+			$
+					.get(
+							url,
+							function(response) {
 
 								console.log(response);
 								console.log(response.errorMessage);
@@ -56,11 +66,11 @@
 								//	alert(msg);
 
 								if (msg.errorMessage != null) {
-									alert("Email and Request Type not found..please enter your registered email and the request type which is in our donation request");
+									alert("Email Id not found..please enter your registered email-id");
 								} else {
 									//alert("valid Username/Password");
 									alert("Thank You for your contribution");
-									
+
 									window.location.href = "?pageName=home.jsp";
 								}
 							});
