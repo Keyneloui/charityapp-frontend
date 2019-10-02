@@ -18,9 +18,9 @@
 	<br />
 	<br />
 	<br />
-	
+	<!--  <font color="red"><h2>Admin Login</h2></font>-->
 	<div class="container">
-	<h2>Admin Login</h2>
+	<h2>Admin Login</h2></font>
 	<form onsubmit="register()">
 		<label>Email:</label> <input type="email" name="email_id"
 			id="email_id" placeholder="Enter Email" required autofocus /> <br/><br />

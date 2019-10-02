@@ -39,7 +39,7 @@
 			event.preventDefault();
 
 			var email_id = document.getElementById("email_id").value;
-			 localStorage.setItem("email",email_id.value);
+			
 			var password = document.getElementById("password").value;
 
 			var formData = "email_id=" + email_id + "&password=" + password;
@@ -50,7 +50,7 @@
 			//alert(url);
 			var formData = {};
 			$.get(url, function(response) {
-				localStorage.setItem("name",response.name);
+				//localStorage.setItem("name",response.name);
 				console.log(response);
 				console.log(response.errorMessage);
 				var msg = JSON.parse(response);
@@ -60,6 +60,7 @@
 					alert("Invalid Username/Password......Kindly Register");
 				} else {
 					//alert("valid Username/Password");
+					 localStorage.setItem("USERID",msg.id);
 					window.location.href = "?pageName=home.jsp";
 				}
 			});

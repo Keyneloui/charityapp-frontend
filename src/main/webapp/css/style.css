@@ -28,6 +28,21 @@ input[type=submit] {
 	background-color: #f1f1f1;
 	padding: 20px;
 }
+li{
+	list-style-type: none;
+	color: black;
+	font-family: cursive;
+    font-style: oblique;
+    font-size: larger;
+}
+.formstyle{
+	background-color: cornsilk;
+	width: 400px;
+	height: 300px;
+	box-shadow: 8px 9px 8px -8px rgba(255, 255, 255, 0.5);
+	text-align: center;
+	font-size: large;
+}
 select{
 	width: 25%;
 	padding: 12px;
@@ -37,4 +52,6 @@ select{
 	margin-top: 6px;
 	margin-bottom: 16px;
 }
+.class{
+	display : none;
 }

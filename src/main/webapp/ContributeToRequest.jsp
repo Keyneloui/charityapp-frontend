@@ -21,16 +21,16 @@
 <div class=container>
 <p><h2>Donate a little!</h2></p>
 	<form onsubmit="loadBooks()">
-		 <label>Email Id:</label> <input type="email" name="emailId"
+		<!--  <label>Email Id:</label> <input type="email" name="emailId"
 			id="emailId" placeholder="Enter email Id" required autofocus /> <br />
-			<br/>
+			<br/> -->
 		<label>Request Type</label> <select id="mySelect"><option>Food</option>
 			<option>Medicine</option>
 			<option>Education</option>
 			<option>Others</option> 
 		</select > <br/><br /> <label>Amount You Want to Contribute:</label> <input
 			type="number" name="requestAmount" id="requestAmount"
-			placeholder="Enter amount" min="1" max="20000" required /> <br/><br /> <input
+			placeholder="Enter amount" min="1" max="200000" required /> <br/><br /> <input
 			type="submit" value="Submit" class="btn btn-success">&nbsp;
 		<button type="reset" class="btn btn-danger" value="clear">clear
 		</button>
@@ -44,10 +44,10 @@
 			event.preventDefault();
 			//alert('entering');
 			var requestType = document.getElementById("mySelect").value;
-			var emailId = document.getElementById("email").value;
-		//	var storedValue = localStorage.getItem("email");
+			//var emailId = document.getElementById("emailId").value;
+			var userId = localStorage.getItem("USERID");
 			var requestAmount = document.getElementById("requestAmount").value;
-			var formData = "requestType=" + requestType + "&emailId=" + emailId
+			var formData = "requestType=" + requestType + "&userId=" + userId
 					+ "&requestAmount=" + requestAmount;
 			console.log(formData);
 			//	alert(formData);
@@ -69,7 +69,7 @@
 								//	alert(msg);
 
 								if (msg.errorMessage != null) {
-									alert("Email Id not found..please enter your registered email-id");
+									alert("Invalid");
 								} else {
 									//alert("valid Username/Password");
 									alert("Thank You for your contribution");

@@ -10,7 +10,14 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <header>
-
+<script>
+		function logout()
+		{
+			event.preventDefault();
+			localStorage.clear();
+			window.location.href="?pageName=hello.jsp";
+		}
+		</script>
 
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -24,14 +31,15 @@
 			<ul class="navbar-nav mr-auto">
 
 
-				<li class="nav-item"><a class="nav-link"
-					href="?pageName=hello.jsp">Log out <span
-						class="sr-only">(current)</span></a></li>
+				
 				<li class="nav-item"><a class="nav-link"
 					href="?pageName=ContributeToRequest.jsp">Contribute <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=viewRequest.jsp">Our Request<span
+					href="?pageName=viewRequest.jsp">Fund Request<span
+						class="sr-only">(current)</span></a></li>
+						<li class="nav-item"><a class="nav-link"
+					href="" onclick="logout()">Log out <span
 						class="sr-only">(current)</span></a></li>
 		</div>
 	</nav>
