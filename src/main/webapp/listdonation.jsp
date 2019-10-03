@@ -49,8 +49,8 @@ function loadBooks()
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Request Type</th>
-								<th>Request Amount</th>
+								<th>Type</th>
+								<th>Amount</th>
 							</tr>
 						</thead>
 						<tbody id="tbody">

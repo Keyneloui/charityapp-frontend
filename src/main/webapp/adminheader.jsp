@@ -10,6 +10,14 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <header>
+<script>
+		function logout()
+		{
+			event.preventDefault();
+			localStorage.clear();
+			window.location.href="?pageName=hello.jsp";
+		}
+		</script>
 
 
 
@@ -39,9 +47,10 @@
 					href="?pageName=donorList.jsp">Donor List<span
 						class="sr-only">(current)</span></a></li>
 						<li class="nav-item"><a class="nav-link"
-					href="?pageName=hello.jsp">Log out <span
+					href="" onclick="logout()">Log out <span
 						class="sr-only">(current)</span></a></li>
 		</div>
 	</nav>
+	</header>
 
 </html>

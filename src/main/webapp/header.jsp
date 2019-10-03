@@ -23,7 +23,7 @@
 
 
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=Test.jsp">Admin Login <span
+					href="?pageName=adminlogin.jsp">Admin Login <span
 						class="sr-only">(current)</span></a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="?pageName=donorlog.jsp">Donor Login <span class="sr-only">(current)</span></a>

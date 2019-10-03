@@ -51,8 +51,8 @@ function loadBooks()
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th> Type</th>
-								<th> Amount</th>
+								<th>Type</th>
+								<th>Amount</th>
 							</tr>
 						</thead>
 						<tbody id="tbody">

@@ -7,10 +7,11 @@
 <title>Update Request</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
+
+<script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 
-<script src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body style="text-align: center">
 
@@ -20,12 +21,12 @@
 	<br />
 	<div class=container>
 	<h3>Update Donation</h3>
+	
 	<form onsubmit="loadBooks()">
+	
 
-		<label>Request Type</label> <select id="mySelect"><option>Food</option>
-			<option>Medicine</option>
-			<option>Education</option>
-			<option>Others</option>
+
+		<label>Request Type</label> <select id="requestType"><
 			</select> <br />
 			<br/>
 			<label>Enter the amount you want to add:</label>
@@ -42,6 +43,7 @@
 			</div>
 
 			<!-- Script -->
+			
 
 			<script>
 				function loadBooks() {
@@ -51,7 +53,7 @@
 					var requestAmount = document
 					.getElementById("requestAmount").value;
 					//alert('amount');
-					var requestType = document.getElementById("mySelect").value;
+					var requestType = document.getElementById("requestType").value;
 					//alert('type');
 
 					
@@ -83,6 +85,23 @@
 					});
 
 				}
+
+				function loadRequestTypes(){
+					var url = "http://localhost:8080/mavenwebb/ListRequests";
+					$.getJSON(url).then ( function (response) {
+					var content = "";
+					for ( let dr of response){
+						console.log(dr);
+						content +="<option value="+dr.id  +">"+dr.requestType+""+"(Rs."+dr.requestAmount+")"+"</option>";
+					
+					}
+					console.log(content);
+					document.getElementById("requestType").innerHTML= content;
+					});
+
+					}
+
+				loadRequestTypes();
 			</script>
 
 			<!-- End -->

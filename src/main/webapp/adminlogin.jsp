@@ -49,7 +49,7 @@
 			var formData = {};
 			$.get(url, function(response) {
 				console.log(response);
-				console.log(response.errorMessage);
+				//console.log(response.errorMessage);
 				var msg = JSON.parse(response);
 				//alert(msg);
 

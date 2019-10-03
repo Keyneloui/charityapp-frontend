@@ -23,8 +23,8 @@
 	<h3>Add Donation</h3>
 	<form onsubmit="loadBooks()">
 
-		<label>Request Id:</label><input type="number" name="requestId"
-			id="requestId" placeholder="Enter requestId" required autofocus /> <br /><br/>
+		<!-- <label>Request Id:</label><input type="number" name="requestId"
+			id="requestId" placeholder="Enter requestId" required autofocus />  --><br /><br/>
 		<label>Request Type:</label> <input type="text" name="requestType"
 			id="requestType" placeholder="Enter requestType" required autofocus />
 		<br /> <br/><label>Request Amount:</label> <input type="number"
@@ -43,10 +43,9 @@
 			function loadBooks() {
 				event.preventDefault();
 				var requestType = document.getElementById("requestType").value;
-				var requestId = document.getElementById("requestId").value;
+			//	var requestId = document.getElementById("requestId").value;
 				var requestAmount = document.getElementById("requestAmount").value;
-				var formData = "requestType=" + requestType + "&requestId="
-						+ requestId + "&requestAmount=" + requestAmount;
+				var formData = "requestType=" + requestType +  "&requestAmount=" + requestAmount;
 				console.log(formData);
 
 				var url = "http://localhost:8080/mavenwebb/AddRequest?"
@@ -66,6 +65,7 @@
 						alert("Request Type already exists\nPlease enter new request");
 					} else {
 						//alert("valid Username/Password");
+						 localStorage.setItem("REQUESTID",msg.id);
 						window.location.href = "?pageName=index.jsp";
 					}
 
