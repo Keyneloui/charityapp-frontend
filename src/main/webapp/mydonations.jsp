@@ -20,7 +20,7 @@ function loadBooks()
 		        console.log(list);
 		        content += "<tr>";
 		      
-		        content += "<td>" + dr.name + "</td>";
+		       
 		        content += "<td>" + dr.requestType + "</td>";
 		        content += "<td>" + dr.amount + "</td>";
 		        content += "</tr>";
@@ -51,7 +51,7 @@ function loadBooks()
 					<thead>
 						<tr>
 
-							<th>Name</th>
+							
 							<th>Request Type</th>
 							<th> Amount Funded</th>
 						</tr>

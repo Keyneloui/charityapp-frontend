@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +10,13 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <header>
-<script>
-		function logout()
-		{
+	<script>
+		function logout() {
 			event.preventDefault();
 			localStorage.clear();
-			window.location.href="?pageName=hello.jsp";
+			window.location.href = "?pageName=hello.jsp";
 		}
-		</script>
+	</script>
 
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -30,20 +29,19 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
 
+				<li class="nav-item"><a class="nav-link"
+					href="?pageName=viewRequest.jsp">Fund Requests<span
+						class="sr-only">(current)</span></a></li>
 
-				
+
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=ContributeToRequest.jsp">Contribute <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item"><a class="nav-link"
-					href="?pageName=viewRequest.jsp">Fund Request<span
+					href="?pageName=ContributeToRequest.jsp">Contribute to our fund<span
 						class="sr-only">(current)</span></a></li>
-						<li class="nav-item"><a class="nav-link"
-					href="" onclick="logout()">Log out <span
-						class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link" href=""
+					onclick="logout()">Log out <span class="sr-only">(current)</span></a></li>
 		</div>
 	</nav>
-	</header>
+</header>
 
 
 </html>

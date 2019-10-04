@@ -56,7 +56,7 @@
 				if (msg.errorMessage != null) {
 					alert("Invalid Username/Password");
 				} else {
-					//alert("valid Username/Password");
+					alert("Login Success");
 					window.location.href = "?pageName=index.jsp";
 				}
 			});

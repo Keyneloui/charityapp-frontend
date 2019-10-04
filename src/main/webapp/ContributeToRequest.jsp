@@ -24,13 +24,13 @@
 		<p>
 		<h2>Donate a little!</h2>
 		</p>
-		<form onsubmit="loadBooks()">
+		<form onsubmit="loadRequest()">
 			<label>Request Type</label> <select id="requestType"><
-			</select> <br /> </select> <br />
-			<br /> <label>Amount You Want to Contribute:</label> <input
-				type="number" name="requestAmount" id="requestAmount"
-				placeholder="Enter amount" min="100" max="1000000" required /> <br />
-			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
+			</select> <br /> </select> <br /> <br /> <label>Amount You Want to
+				Contribute:</label> <input type="number" name="requestAmount"
+				id="requestAmount" placeholder="Enter amount" min="100"
+				max="1000000" required /> <br /> <br /> <input type="submit"
+				value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
 
@@ -40,11 +40,11 @@
 	<!-- Scriplets -->
 
 	<script>
-		function loadBooks() {
+		function loadRequest() {
 			event.preventDefault();
-			//alert('entering');
+			
 			var requestType = document.getElementById("requestType").value;
-			//var emailId = document.getElementById("emailId").value;
+			
 			var userId = localStorage.getItem("USERID");
 			var requestAmount = document.getElementById("requestAmount").value;
 			console.log("reqType=>"+requestType);
@@ -53,14 +53,14 @@
 			var formData = "requestType=" + requestType + "&userId=" + userId
 					+ "&requestAmount=" + requestAmount;
 			console.log(formData);
-			//	alert(formData);
+			
 
 			var url = "http://localhost:8080/mavenwebb/ContributeRequest?"
 					+ formData;
 			console.log(url);
-			//	alert(url);
+			
 			var formData = {};
-			//	alert(formData);
+			
 			$
 					.get(
 							url,
@@ -69,12 +69,12 @@
 								console.log(response);
 								console.log(response.errorMessage);
 								var msg = JSON.parse(response);
-								//	alert(msg);
+								
 
 								if (msg.errorMessage != null) {
-									alert("Invalid");
+									alert("Invalid credentials");
 								} else {
-									//alert("valid Username/Password");
+									
 									alert("Thank You for your contribution");
 
 									window.location.href = "?pageName=home.jsp";

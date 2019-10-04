@@ -50,7 +50,7 @@
 			//alert(url);
 			var formData = {};
 			$.get(url, function(response) {
-				//localStorage.setItem("name",response.name);
+				
 				console.log(response);
 				console.log(response.errorMessage);
 				var msg = JSON.parse(response);
@@ -59,8 +59,12 @@
 				if (msg.errorMessage != null) {
 					alert("Invalid Username/Password......Kindly Register");
 				} else {
-					//alert("valid Username/Password");
-					 localStorage.setItem("USERID",msg.id);
+					alert("Login Success");
+					localStorage.setItem("LOGGED_IN_USER", JSON.stringify(msg));
+					// localStorage.setItem("USERID",msg.id);
+					 //localStorage.setItem("USERNAME",msg.name);
+					 //localStorage.setItem("USEREMAIL",msg.email_id);
+					 //localStorage.setItem("USERPASSWORD",msg.password);
 					window.location.href = "?pageName=home.jsp";
 				}
 			});

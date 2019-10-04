@@ -21,7 +21,7 @@
 	<br />
 	<div class=container>
 	<h3>Add Donation</h3>
-	<form onsubmit="loadBooks()">
+	<form onsubmit="loadRequest()">
 
 		<!-- <label>Request Id:</label><input type="number" name="requestId"
 			id="requestId" placeholder="Enter requestId" required autofocus />  --><br /><br/>
@@ -40,7 +40,7 @@
 		<!-- Script -->
 
 		<script>
-			function loadBooks() {
+			function loadRequest() {
 				event.preventDefault();
 				var requestType = document.getElementById("requestType").value;
 			//	var requestId = document.getElementById("requestId").value;
@@ -64,7 +64,7 @@
 					if (msg.errorMessage != null) {
 						alert("Request Type already exists\nPlease enter new request");
 					} else {
-						//alert("valid Username/Password");
+						alert("Request Type added successfully!!");
 						 localStorage.setItem("REQUESTID",msg.id);
 						window.location.href = "?pageName=index.jsp";
 					}

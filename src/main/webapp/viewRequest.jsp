@@ -8,10 +8,9 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
-function loadBooks()
+function loadRequest()
 {
-	//http://localhost:8080/charity/AddRequest?requestType=a&requestId=5&requestAmount=100
-	//$.post ... url, form data , response ( success/failure)
+	
 	var url = "http://localhost:8080/mavenwebb/ListRequests";
 		$.getJSON(url, function(response){
 		    var list = response;
@@ -40,7 +39,7 @@ function loadBooks()
 	<br />
 	
 
-	<form onsubmit="loadBooks()"></form>
+	<form onsubmit="loadRequest()"></form>
 	<div class="container">
 	<h2>Fund Requests</h2>
 		<div class="row">

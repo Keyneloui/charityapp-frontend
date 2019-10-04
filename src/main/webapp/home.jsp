@@ -15,15 +15,29 @@
 	<br />
 	<br />
 	<br />
-
+	<div>
 	
-	<a href="?pageName=viewRequest.jsp"> <h4><font color="white">Fund requests</a>
+	</div>
+	<script>
+    function displayName() {
+        var user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+        var name = user.name;
+        document.getElementById("name").innerHTML = "Welcome ....." + name;
+        return name;
+    }
+    displayName();
+</script>
+
+	<div class="container">
+	<div id="name"></div>
+	<a href="?pageName=viewRequest.jsp"> <h4>Fund requests</a>
 	<br />
 	<br/>
-	<a href="?pageName=ContributeToRequest.jsp"><font color="white">Contribute to our Request</font></a>
+	<a href="?pageName=ContributeToRequest.jsp">Contribute to our Request</a>
 	<br/>
 	<br/>
-	<a href="?pageName=mydonations.jsp"><font color="white">My Donations</h4></font></a>
+	<a href="?pageName=mydonations.jsp">My Donations</h4></a>
+	</div>
 	<!--  <input type="button" value="Logout" class="btn btn-danger"  onclick="logout()">
 		
 		<script>

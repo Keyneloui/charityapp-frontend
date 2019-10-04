@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
-function loadBooks()
+function loadRequest()
 {
 	var url = "http://localhost:8080/mavenwebb/ListRequests";
 		$.getJSON(url, function(response){
@@ -40,7 +40,7 @@ function loadBooks()
 	<form onsubmit="loadBooks()"></form>
 	<div class="view" id="view"></div>
 	<div class="container">
-	<h2>Our Request</h2>
+	<h2>Fund Requests</h2>
 		<div class="row">
 			<div class="col">
 				<div align="left">
@@ -61,7 +61,7 @@ function loadBooks()
 			</div>
 		</div>
 		<script>
-loadBooks();
+		loadRequest();
 </script>
 
 		

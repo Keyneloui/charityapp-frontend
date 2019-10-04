@@ -20,65 +20,57 @@
 	<br />
 	<br />
 	<div class=container>
-	<h3>Update Donation</h3>
-	
-	<form onsubmit="loadBooks()">
-	
+		<h3>Update Donation</h3>
+
+		<form onsubmit="loadRequest()">
 
 
-		<label>Request Type</label> <select id="requestType"><
-			</select> <br />
-			<br/>
-			<label>Enter the amount you want to add:</label>
-			<input type="number" name="requestAmount" id="requestAmount"
-			placeholder="Enter amount" required />
-			<br />
-			<br/>
-			<input type="submit" value="Submit" class="btn btn-success">&nbsp;
+
+			<label>Request Type</label> <select id="requestType"><
+			</select> <br /> <br /> <label>Enter the amount you want to add:</label> <input
+				type="number" name="requestAmount" id="requestAmount"
+				placeholder="Enter amount" required /> <br /> <br /> <input
+				type="submit" value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
-			<br />
-			<br/>
-			</form>
-			</div>
+			<br /> <br />
+		</form>
+	</div>
 
-			<!-- Script -->
-			
+	<!-- Script -->
 
-			<script>
-				function loadBooks() {
-				//	alert('entering');
+
+	<script>
+				function loadRequest() {
+				
 					event.preventDefault();
-					//alert('hello');
+					
 					var requestAmount = document
 					.getElementById("requestAmount").value;
-					//alert('amount');
+					
 					var requestType = document.getElementById("requestType").value;
-					//alert('type');
+					
 
 					
 					var formData = "requestType=" + requestType
 							+ "&requestAmount=" + requestAmount;
 					console.log(formData);
-//					alert(formData);
 
 					var url = "http://localhost:8080/mavenwebb/UpdateRequest?"
 							+ formData;
 					console.log(url);
-				//	alert(url);
+				
 					var formData = {};
-					//alert(formData);
+					
 					$.get(url, function(response) {
 						console.log(response);
 						console.log(response.errorMessage);
-						//alert(response);
+						
 						var msg = JSON.parse(response);
-						//alert(msg);
-
-						if (msg.errorMessage != null) {
-							alert("Request Type doesn't exists");
+											if (msg.errorMessage != null) {
+							alert("Please enter valid data");
 						} else {
-							//alert("valid Username/Password");
+							alert("Request has been updated");
 							window.location.href = "?pageName=index.jsp";
 						}
 
@@ -104,6 +96,6 @@
 				loadRequestTypes();
 			</script>
 
-			<!-- End -->
+	<!-- End -->
 </body>
 </html>

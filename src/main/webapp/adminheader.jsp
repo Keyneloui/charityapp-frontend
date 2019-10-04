@@ -35,13 +35,13 @@
 
 				
 						<li class="nav-item"><a class="nav-link"
-					href="?pageName=listdonation.jsp">Our Requests <span class="sr-only">(current)</span></a>
+					href="?pageName=listdonation.jsp">Fund Requests <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=addrequest.jsp">Add Request <span class="sr-only">(current)</span></a>
+					href="?pageName=addrequest.jsp">Add Fund Request <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=updateRequest.jsp">Update Request<span
+					href="?pageName=updateRequest.jsp">Update Fund Request<span
 						class="sr-only">(current)</span></a></li>
 						<li class="nav-item"><a class="nav-link"
 					href="?pageName=donorList.jsp">Donor List<span

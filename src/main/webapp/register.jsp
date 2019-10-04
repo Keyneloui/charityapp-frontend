@@ -30,7 +30,7 @@
 
 
 			<br /> <br /> <br /> <label>Name:</label> <input type="text"
-				name="Name" id="name" placeholder="Enter Name" required autofocus />
+				name="Name" id="name" placeholder="Enter Name"required autofocus />
 			<br /> <br/><label>Email:</label> <input type="email" name="email"
 				id="email" placeholder="Enter Email" required /> <br/><br /> <label>Password:</label>
 			<input type="password" name="pass" id="password"
@@ -145,7 +145,7 @@ and at least 8 or more characters"
 								if (msg.errorMessage != null) {
 									alert("Email,Name already exists\nRegister with a new Email and Name");
 								} else {
-									//alert("valid Username/Password");
+									alert("Registration Success,Kindly Login to continue");
 									window.location.href = "?pageName=donorlog.jsp";
 								}
 							});
