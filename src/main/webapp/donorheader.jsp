@@ -35,7 +35,7 @@
 
 
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=ContributeToRequest.jsp">Contribute to our fund<span
+					href="?pageName=ContributeToRequest.jsp">Contribute to our fund Request<span
 						class="sr-only">(current)</span></a></li>
 				<li class="nav-item"><a class="nav-link" href=""
 					onclick="logout()">Log out <span class="sr-only">(current)</span></a></li>

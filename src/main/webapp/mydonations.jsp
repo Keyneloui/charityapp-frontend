@@ -11,7 +11,13 @@
 
 function loadBooks()
 {
-	var url = "http://localhost:8080/mavenwebb/DonorListServlet";
+	var user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+	var userId=user.id;
+	var formData = "&userId=" + userId;
+
+console.log(formData);
+
+	var url = "http://localhost:8080/mavenwebb/Mydonation?"+ formData;;
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";

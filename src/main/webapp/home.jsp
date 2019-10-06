@@ -42,9 +42,9 @@
 				<h4>
 					<font color="white">Fund requests
 			</a> <br /> <br /> <a href="?pageName=ContributeToRequest.jsp"><font
-				color="white">Contribute to our Request</font></a> <br /> <br /> <a
+				color="white">Contribute to our Fund Request</font></a> <br /> <br /> <!--  <a
 				href="?pageName=mydonations.jsp"><font color="white">My
-					Donations
+					Donations-->
 					</h4>
 			</font></a>
 </body>

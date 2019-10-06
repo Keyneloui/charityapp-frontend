@@ -18,16 +18,16 @@
 
 
 	<a href="?pageName=listdonation.jsp"><h4>
-			<font color="white">Our Requests</a>
+			<font color="white">Fund Requests</a>
 	<br />
 	<br />
 
-	<a href="?pageName=addrequest.jsp"> <font color="white">Add
+	<a href="?pageName=addrequest.jsp"> <font color="white">Add Fund
 			Requests</a>
 	<br />
 	<br />
 
-	<a href="?pageName=updateRequest.jsp"><font color="white">Update
+	<a href="?pageName=updateRequest.jsp"><font color="white">Update Fund
 			Requests</a>
 	<br />
 	<br />
