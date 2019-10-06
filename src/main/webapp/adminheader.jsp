@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +10,13 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <header>
-<script>
-		function logout()
-		{
+	<script>
+		function logout() {
 			event.preventDefault();
 			localStorage.clear();
-			window.location.href="?pageName=hello.jsp";
+			window.location.href = "?pageName=hello.jsp";
 		}
-		</script>
+	</script>
 
 
 
@@ -33,24 +32,22 @@
 			<ul class="navbar-nav mr-auto">
 
 
-				
-						<li class="nav-item"><a class="nav-link"
-					href="?pageName=listdonation.jsp">Fund Requests <span class="sr-only">(current)</span></a>
-				</li>
+
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=addrequest.jsp">Add Fund Request <span class="sr-only">(current)</span></a>
-				</li>
+					href="?pageName=listdonation.jsp">Fund Requests <span
+						class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="?pageName=addrequest.jsp">Add Fund Request <span
+						class="sr-only">(current)</span></a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="?pageName=updateRequest.jsp">Update Fund Request<span
 						class="sr-only">(current)</span></a></li>
-						<li class="nav-item"><a class="nav-link"
-					href="?pageName=donorList.jsp">Donor List<span
-						class="sr-only">(current)</span></a></li>
-						<li class="nav-item"><a class="nav-link"
-					href="" onclick="logout()">Log out <span
-						class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="?pageName=donorList.jsp">Donor List<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link" href=""
+					onclick="logout()">Log out <span class="sr-only">(current)</span></a></li>
 		</div>
 	</nav>
-	</header>
+</header>
 
 </html>

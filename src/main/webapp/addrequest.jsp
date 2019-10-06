@@ -20,61 +20,64 @@
 	<br />
 	<br />
 	<div class=container>
-	<h3>Add Donation</h3>
-	<form onsubmit="loadRequest()">
+		<h3>Add Donation</h3>
+		<form onsubmit="loadRequest()">
 
-		<!-- <label>Request Id:</label><input type="number" name="requestId"
-			id="requestId" placeholder="Enter requestId" required autofocus />  --><br /><br/>
-		<label>Request Type:</label> <input type="text" name="requestType"
-			id="requestType" placeholder="Enter requestType" required autofocus />
-		<br /> <br/><label>Request Amount:</label> <input type="number"
-			name="requestAmount" id="requestAmount" placeholder="Enter amount"
-			required /> <br /> <br/><input type="submit" value="Submit"
-			class="btn btn-success">&nbsp;
-		<button type="reset" class="btn btn-danger" value="clear">clear
-		</button>
-		<br /> <br/>
+			<br />
+			<br /> <label>Request Type:</label> <input type="text"
+				name="requestType" id="requestType" placeholder="Enter request Type"
+				required autofocus /> <br /> <br />
+			<label>Request Amount:</label> <input type="number"
+				name="requestAmount" id="requestAmount" placeholder="Enter amount"
+				min="100" max="1000000" required /> <br /> <br />
+			<input type="submit" value="Submit" class="btn btn-success">&nbsp;
+			<button type="reset" class="btn btn-danger" value="clear">clear
+			</button>
+			<br /> <br />
 		</form>
-		</div>
+	</div>
 
-		<!-- Script -->
+	<!-- Script -->
 
-		<script>
-			function loadRequest() {
-				event.preventDefault();
-				var requestType = document.getElementById("requestType").value;
+	<script>
+		function loadRequest() {
+			event.preventDefault();
+			var requestType = document.getElementById("requestType").value;
 			//	var requestId = document.getElementById("requestId").value;
-				var requestAmount = document.getElementById("requestAmount").value;
-				var formData = "requestType=" + requestType +  "&requestAmount=" + requestAmount;
-				console.log(formData);
+			var requestAmount = document.getElementById("requestAmount").value;
+			var formData = "requestType=" + requestType + "&requestAmount="
+					+ requestAmount;
+			console.log(formData);
 
-				var url = "http://localhost:8080/mavenwebb/AddRequest?"
-						+ formData;
-				console.log(url);
-				//alert(url);
-				var formData = {};
-				//alert(formData);
-				$.get(url, function(response) {
-					console.log(response);
-					console.log(response.errorMessage);
-					//alert(response);
-					var msg = JSON.parse(response);
-					//alert(msg);
+			var url = "http://localhost:8080/mavenwebb/AddRequest?" + formData;
+			console.log(url);
+			//alert(url);
+			var formData = {};
+			//alert(formData);
+			$
+					.get(
+							url,
+							function(response) {
+								console.log(response);
+								console.log(response.errorMessage);
+								//alert(response);
+								var msg = JSON.parse(response);
+								//alert(msg);
 
-					if (msg.errorMessage != null) {
-						alert("Request Type already exists\nPlease enter new request");
-					} else {
-						alert("Request Type added successfully!!");
-						 localStorage.setItem("REQUESTID",msg.id);
-						window.location.href = "?pageName=index.jsp";
-					}
+								if (msg.errorMessage != null) {
+									alert("Request Type already exists\nPlease enter new request");
+								} else {
+									alert("Request Type added successfully!!");
+									localStorage.setItem("REQUESTID", msg.id);
+									window.location.href = "?pageName=index.jsp";
+								}
 
-				});
+							});
 
-			}
-		</script>
+		}
+	</script>
 
-		<!-- End -->
+	<!-- End -->
 </body>
 
 

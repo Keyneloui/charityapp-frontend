@@ -20,17 +20,19 @@
 	<br />
 	<!--  <font color="red"><h2>Admin Login</h2></font>-->
 	<div class="container">
-	<h2>Admin Login</h2></font>
-	<form onsubmit="register()">
-		<label>Email:</label> <input type="email" name="email_id"
-			id="email_id" placeholder="Enter Email" required autofocus /> <br/><br />
-		<label>Password:</label> <input type="password" name="password"
-			id="password" placeholder="Enter Password" required /> <br /><br/> <input
-			type="submit" value="Submit" class="btn btn-success">&nbsp;
-		<button type="reset" class="btn btn-danger" value="clear">clear
-		</button>
-		<br />
-	</form>
+		<h2>Admin Login</h2>
+		</font>
+		<form onsubmit="register()">
+			<label>Email:</label> <input type="email" name="email_id"
+				id="email_id" placeholder="Enter Email" required autofocus /> <br />
+			<br /> <label>Password:</label> <input type="password"
+				name="password" id="password" placeholder="Enter Password" required />
+			<br />
+			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
+			<button type="reset" class="btn btn-danger" value="clear">clear
+			</button>
+			<br />
+		</form>
 	</div>
 	<script>
 		function register() {
@@ -47,19 +49,22 @@
 			console.log(url);
 			//alert(url);
 			var formData = {};
-			$.get(url, function(response) {
-				console.log(response);
-				//console.log(response.errorMessage);
-				var msg = JSON.parse(response);
-				//alert(msg);
+			$.get(url,
+					function(response) {
+						console.log(response);
+						//console.log(response.errorMessage);
+						var msg = JSON.parse(response);
+						//alert(msg);
 
-				if (msg.errorMessage != null) {
-					alert("Invalid Username/Password");
-				} else {
-					alert("Login Success");
-					window.location.href = "?pageName=index.jsp";
-				}
-			});
+						if (msg.errorMessage != null) {
+							alert("Invalid Username/Password");
+						} else {
+							alert("Login Success");
+							localStorage.setItem("LOGGED_IN_USER", JSON
+									.stringify(msg));
+							window.location.href = "?pageName=homePage.jsp";
+						}
+					});
 		}
 	</script>
 </body>

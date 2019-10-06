@@ -38,28 +38,28 @@ function loadBooks()
 	<br />
 	<br />
 	<br />
-	
+
 	<form onsubmit="loadBooks()"></form>
 	<div class="container">
-	<h2>Donor List</h2>
+		<h2>Donor List</h2>
 		<div class="row">
 			<div class="col">
-			<div align="left">
+				<div align="left">
 
-				<table border="1" class="table table-condensed" id="tbl">
-				
-					<thead>
-						<tr>
+					<table border="1" class="table table-condensed" id="tbl">
 
-							<th>Name</th>
-							<th>Request Type</th>
-							<th> Amount Funded</th>
-						</tr>
-					</thead>
-					<tbody id="tbody">
+						<thead>
+							<tr>
 
-					</tbody>
-				</table>
+								<th>Name</th>
+								<th>Fund Request</th>
+								<th>Amount Funded</th>
+							</tr>
+						</thead>
+						<tbody id="tbody">
+
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -68,7 +68,7 @@ function loadBooks()
 loadBooks();
 </script>
 
-	
+
 	<br />
 
 </body>

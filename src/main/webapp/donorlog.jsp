@@ -17,21 +17,22 @@
 	<br />
 	<br />
 	<br />
-	
-	
+
+
 	<div id="result"></div>
 	<div class="container">
-	<h2>Donor Login</h2>
-	<form onsubmit="register()">
-		<label>Email:</label> <input type="email" name="email_id"
-			id="email_id" placeholder="Enter Email" required autofocus /><br/> <br />
-		<label>Password:</label> <input type="password" name="password"
-			id="password" placeholder="Enter Password" required /> <br /><br/> <input
-			type="submit" value="Submit" class="btn btn-success">&nbsp;
-		<button type="reset" class="btn btn-danger" value="clear">clear
-		</button>
-		<br />
-	</form>
+		<h2>Donor Login</h2>
+		<form onsubmit="register()">
+			<label>Email:</label> <input type="email" name="email_id"
+				id="email_id" placeholder="Enter Email" required autofocus /><br />
+			<br /> <label>Password:</label> <input type="password"
+				name="password" id="password" placeholder="Enter Password" required />
+			<br />
+			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
+			<button type="reset" class="btn btn-danger" value="clear">clear
+			</button>
+			<br />
+		</form>
 	</div>
 	<script>
 		function register() {
@@ -39,7 +40,7 @@
 			event.preventDefault();
 
 			var email_id = document.getElementById("email_id").value;
-			
+
 			var password = document.getElementById("password").value;
 
 			var formData = "email_id=" + email_id + "&password=" + password;
@@ -49,25 +50,29 @@
 			console.log(url);
 			//alert(url);
 			var formData = {};
-			$.get(url, function(response) {
-				
-				console.log(response);
-				console.log(response.errorMessage);
-				var msg = JSON.parse(response);
-				//alert(msg);
+			$
+					.get(
+							url,
+							function(response) {
 
-				if (msg.errorMessage != null) {
-					alert("Invalid Username/Password......Kindly Register");
-				} else {
-					alert("Login Success");
-					localStorage.setItem("LOGGED_IN_USER", JSON.stringify(msg));
-					// localStorage.setItem("USERID",msg.id);
-					 //localStorage.setItem("USERNAME",msg.name);
-					 //localStorage.setItem("USEREMAIL",msg.email_id);
-					 //localStorage.setItem("USERPASSWORD",msg.password);
-					window.location.href = "?pageName=home.jsp";
-				}
-			});
+								console.log(response);
+								console.log(response.errorMessage);
+								var msg = JSON.parse(response);
+								//alert(msg);
+
+								if (msg.errorMessage != null) {
+									alert("Invalid Username/Password......Kindly Register");
+								} else {
+									alert("Login Success");
+									localStorage.setItem("LOGGED_IN_USER", JSON
+											.stringify(msg));
+									//localStorage.setItem("USERID",msg.id);
+									//localStorage.setItem("USERNAME",msg.name);
+									//localStorage.setItem("USEREMAIL",msg.email_id);
+									//localStorage.setItem("USERPASSWORD",msg.password);
+									window.location.href = "?pageName=home.jsp";
+								}
+							});
 		}
 	</script>
 

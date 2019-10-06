@@ -29,8 +29,8 @@
 			<label>Request Type</label> <select id="requestType"><
 			</select> <br /> <br /> <label>Enter the amount you want to add:</label> <input
 				type="number" name="requestAmount" id="requestAmount"
-				placeholder="Enter amount" required /> <br /> <br /> <input
-				type="submit" value="Submit" class="btn btn-success">&nbsp;
+				placeholder="Enter amount" min="100" max="1000000" required /> <br />
+			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
 			<br /> <br />

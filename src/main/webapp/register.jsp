@@ -18,28 +18,29 @@
 
 
 	<jsp:include page="header.jsp"></jsp:include>
-	
+
 
 
 
 
 	<div class="container">
-	<h2>Donor Registration</h2>
+		<h2>Donor Registration</h2>
 
 		<form onsubmit="register()">
 
 
 			<br /> <br /> <br /> <label>Name:</label> <input type="text"
-				name="Name" id="name" placeholder="Enter Name"required autofocus />
-			<br /> <br/><label>Email:</label> <input type="email" name="email"
-				id="email" placeholder="Enter Email" required /> <br/><br /> <label>Password:</label>
-			<input type="password" name="pass" id="password"
-				placeholder="Enter Password"
+				name="Name" id="name" placeholder="Enter Name" required autofocus />
+			<br /> <br />
+			<label>Email:</label> <input type="email" name="email" id="email"
+				placeholder="Enter Email" required /> <br />
+			<br /> <label>Password:</label> <input type="password" name="pass"
+				id="password" placeholder="Enter Password"
 				pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 				title="Must contain at least one number and one uppercase and lowercase letter, 
 and at least 8 or more characters"
-				required /> <br /> <br/><input type="submit" value="Submit"
-				class="btn btn-success">&nbsp;
+				required /> <br /> <br />
+			<input type="submit" value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
 			<br /> Existing User ? <a href="?pageName=donorlog.jsp">Login</a> <br />
@@ -47,8 +48,10 @@ and at least 8 or more characters"
 
 
 		</form>
+
 	</div>
-	<div id="message">
+
+	<!--  	<div id="message">
   <h3>Password must contain the following:</h3>
   <h6 id="letter" class="invalid">A <b>lowercase</b> letter</h6>
   <h6 id="capital" class="invalid">A <b>capital (uppercase)</b> letter</h6>
@@ -115,16 +118,16 @@ and at least 8 or more characters"
 		  }
 		}
 	
-		</script>		
-	
-	
+		</script>		-->
+
+
 	<script>
 		function register() {
 			event.preventDefault();
 			var name = document.getElementById("name").value;
 			var email_id = document.getElementById("email").value;
 			var password = document.getElementById("password").value;
-			
+
 			var formData = "name=" + name + "&email_id=" + email_id
 					+ "&password=" + password;
 

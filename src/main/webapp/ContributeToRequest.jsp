@@ -45,7 +45,9 @@
 			
 			var requestType = document.getElementById("requestType").value;
 			
-			var userId = localStorage.getItem("USERID");
+			var user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+			var userId=user.id;
+			
 			var requestAmount = document.getElementById("requestAmount").value;
 			console.log("reqType=>"+requestType);
 			console.log("userID=>"+userId);

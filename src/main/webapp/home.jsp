@@ -9,42 +9,43 @@
 <script src="js/bootstrap.min.js"></script>
 <title>Revature Charity</title>
 </head>
-<body style="text-align: center" >
+<body style="text-align: center">
 
 	<jsp:include page="donorheader.jsp"></jsp:include>
 	<br />
 	<br />
 	<br />
-	<div>
-	
-	</div>
-	<script>
-    function displayName() {
-        var user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
-        var name = user.name;
-        document.getElementById("name").innerHTML = "Welcome ....." + name;
-        return name;
-    }
-    displayName();
-</script>
+	<style>
+#detail {
+	font-size: 200%;
+}
+</style>
 
-	<div class="container">
-	<div id="name"></div>
-	<a href="?pageName=viewRequest.jsp"> <h4>Fund requests</a>
-	<br />
-	<br/>
-	<a href="?pageName=ContributeToRequest.jsp">Contribute to our Request</a>
-	<br/>
-	<br/>
-	<a href="?pageName=mydonations.jsp">My Donations</h4></a>
-	</div>
-	<!--  <input type="button" value="Logout" class="btn btn-danger"  onclick="logout()">
-		
-		<script>
-		function logout()
-		{
-			localStorage.clear();
-			window.location.href="?pageName=hello.jsp"}
-		</script>-->
+	<div id="detail">
+		<div>
+			<div>
+				<div style="color: white" id="name"></div>
+			</div>
+			<script>
+				function displayName() {
+					var user = JSON.parse(localStorage
+							.getItem("LOGGED_IN_USER"));
+					var name = user.name;
+					document.getElementById("name").innerHTML = "Welcome ....."
+							+ name;
+					return name;
+				}
+				displayName();
+			</script>
+
+			<br /> <a href="?pageName=viewRequest.jsp">
+				<h4>
+					<font color="white">Fund requests
+			</a> <br /> <br /> <a href="?pageName=ContributeToRequest.jsp"><font
+				color="white">Contribute to our Request</font></a> <br /> <br /> <a
+				href="?pageName=mydonations.jsp"><font color="white">My
+					Donations
+					</h4>
+			</font></a>
 </body>
 </html>

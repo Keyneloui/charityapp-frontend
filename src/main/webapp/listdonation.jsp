@@ -35,12 +35,12 @@ function loadRequest()
 	<br />
 	<br />
 	<br />
-	
 
-	<form onsubmit="loadBooks()"></form>
+
+	<form onsubmit="loadRequest()"></form>
 	<div class="view" id="view"></div>
 	<div class="container">
-	<h2>Fund Requests</h2>
+		<h2>Fund Requests</h2>
 		<div class="row">
 			<div class="col">
 				<div align="left">
@@ -63,7 +63,5 @@ function loadRequest()
 		<script>
 		loadRequest();
 </script>
-
-		
 </body>
 </html>
