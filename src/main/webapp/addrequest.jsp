@@ -25,7 +25,7 @@
 
 			<br />
 			<br /> <label>Request Type:</label> <input type="text"
-				name="requestType" id="requestType" placeholder="Enter request Type"
+				name="requestType" id="requestType" placeholder="Enter request Type" pattern="[A-Za-z]{1,32}" title="Request type should be valid and must contain words only"
 				required autofocus /> <br /> <br />
 			<label>Request Amount:</label> <input type="number"
 				name="requestAmount" id="requestAmount" placeholder="Enter amount"

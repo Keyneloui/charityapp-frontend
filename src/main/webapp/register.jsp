@@ -30,7 +30,7 @@
 
 
 			<br /> <br /> <br /> <label>Name:</label> <input type="text"
-				name="Name" id="name" placeholder="Enter Name" pattern="[A-Za-z]{1,32}" title="Name contains letters only"required autofocus />
+				name="Name" id="name" placeholder="Enter Name" pattern="[A-Za-z]{1,32}" title="Name should contains letters only"required autofocus />
 			<br /> <br />
 			<label>Email:</label> <input type="email" name="email" id="email"
 				placeholder="Enter Email" required /> <br />
