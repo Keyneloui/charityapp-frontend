@@ -19,52 +19,69 @@
 	<br />
 	<br />
 	<!--  <font color="red"><h2>Admin Login</h2></font>-->
-	<div class="container">
+ <div class="container"style="
+    opacity: 0.9;
+    background-color: black;
+    color: white;">
 		<h2>Admin Login</h2>
-		</font>
-		<form onsubmit="register()">
-			<label>Email:</label> <input type="email" name="email_id"
-				id="email_id" placeholder="Enter Email" required autofocus /> <br />
+		
+		<form onsubmit="login()">
+		
+			<label>Email:</label> <input type="email" name="email"
+				id="email" placeholder="Enter Email" required autofocus /> <br />
 			<br /> <label>Password:</label> <input type="password"
 				name="password" id="password" placeholder="Enter Password" required />
-			<br />
+				<br/>
+                   <div class="custom-control custom-checkbox mb-3">
+                     <input type="checkbox" class="custom-control-input" id="customCheck1">
+                     <label class="custom-control-label" for="customCheck1" onclick="myFunction()">Show password</label>
+                   </div>
+				
+			
 			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
 			<br />
+			
 		</form>
-	</div>
+		</div>
 	<script>
-		function register() {
-			//alert('register');
-			event.preventDefault();
-
-			var email_id = document.getElementById("email_id").value;
-			var password = document.getElementById("password").value;
-
-			var formData = "email_id=" + email_id + "&password=" + password;
-			console.log(formData);
-			//alert(formData);
-			var url = "http://localhost:8080/mavenwebb/AdminLogin?" + formData;
-			console.log(url);
-			//alert(url);
-			var formData = {};
-			$.get(url,
-					function(response) {
-						console.log(response);
-						//console.log(response.errorMessage);
-						var msg = JSON.parse(response);
-						//alert(msg);
-
-						if (msg.errorMessage != null) {
-							alert("Invalid Username/Password");
-						} else {
-							alert("Login Success");
-							localStorage.setItem("LOGGED_IN_USER", JSON
-									.stringify(msg));
-							window.location.href = "?pageName=homePage.jsp";
-						}
-					});
+	function login(){
+		   event.preventDefault();
+		   var email = document.getElementById("email").value;
+		   var password = document.getElementById("password").value;
+		   var formData = "email=" + email + "&password=" + password ;
+		   console.log(formData);
+		   var url="http://localhost:9000/admin/login?"+formData;
+		   console.log(url);
+		   $.post(url).then(function(response) {
+		       console.log("success");
+		       console.log(response);
+		       var msg=response;
+		     if(msg!=null) {
+		           alert(" Login Success");
+		           localStorage.setItem("LOGGED_IN_USER", JSON
+							.stringify(msg));
+		             window.location.href = "?pageName=homePage.jsp";
+		     }
+		   },
+		   function(response) {
+		       console.log("Error");
+		       console.log(response);
+		        var data = response.responseJSON;
+		       if (data != null) {
+		           alert("Invalid email/password");
+		          // window.location.href= "?pageName=donorlog.jsp";
+		       }
+		   });
+		}
+	function myFunction() {
+		  var x = document.getElementById("password");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
 		}
 	</script>
 </body>

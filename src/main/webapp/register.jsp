@@ -23,7 +23,12 @@
 
 
 
-	<div class="container">
+	
+	<div class="container" style="
+    opacity: 0.9;
+    background-color: black;
+    color: white;
+">
 		<h2>Donor Registration</h2>
 
 		<form onsubmit="register()">
@@ -39,7 +44,9 @@
 				pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 				title="Must contain at least one number and one uppercase and lowercase letter, 
 and at least 8 or more characters"
-				required /> <br /> <br />
+				required /> <br /> <br/>
+				<!-- <label>Age:</label> <input type="number" name="number" id="number"
+				placeholder="Enter Your age" min="10" max="100" title="Age must be above 10" required /> <br /> <br /> -->
 			<input type="submit" value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
@@ -128,29 +135,31 @@ and at least 8 or more characters"
 			var email_id = document.getElementById("email").value;
 			var password = document.getElementById("password").value;
 
-			var formData = "name=" + name + "&email_id=" + email_id
+			var formData = "name=" + name + "&email=" + email_id
 					+ "&password=" + password;
 
 			console.log(formData);
-			var url = "http://localhost:8080/mavenwebb/RegisterServlet?"
-					+ formData;
-			console.log(url);
-			var formData = {};
-			$
-					.get(
-							url,
-							function(response) {
-								console.log(response);
-								console.log(response.errorMessage);
-								var msg = JSON.parse(response);
-								//alersssst(msg);
-
-								if (msg.errorMessage != null) {
-									alert("Email,Name already exists\nRegister with a new Email and Name");
-								} else {
-									alert("Registration Success,Kindly Login to continue");
-									window.location.href = "?pageName=donorlog.jsp";
-								}
+			 var url="http://localhost:9000/donor/donorRegistration?"+formData;
+			   console.log(url);
+			   $.post(url).then(function(response) {
+			       console.log("success");
+			       console.log(response);
+			       var msg=response;
+			     if(msg!=null) {
+			           alert(" Registration Success,Kindly Login to continue");
+			           localStorage.setItem("LOGGED_IN_USER", JSON
+								.stringify(msg));
+			             window.location.href = "?pageName=donorlog.jsp";
+			     }
+			   },
+			   function(response) {
+			       console.log("Error");
+			       console.log(response);
+			        var data = response.responseJSON;
+			       if (data != null) {
+			           alert("User already exists,Kindly login");
+			           window.location.href= "?pageName=register.jsp";
+			       }
 							});
 		}
 	</script>

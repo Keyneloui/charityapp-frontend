@@ -37,15 +37,15 @@
 				}
 				displayName();
 			</script>
+			<p><font color="white">Here you can view our donation request,Contribute to our donation request</font>
+			
 
-			<br /> <a href="?pageName=viewRequest.jsp">
+			<!--  <br /> <a href="?pageName=viewRequest.jsp">
 				<h4>
 					<font color="white">Fund requests
 			</a> <br /> <br /> <a href="?pageName=ContributeToRequest.jsp"><font
-				color="white">Contribute to our Fund Request</font></a> <br /> <br /> <!--  <a
-				href="?pageName=mydonations.jsp"><font color="white">My
-					Donations-->
+				color="white">Contribute to our Fund Request</font></a> <br /> <br /> </div></div>
 					</h4>
-			</font></a>
+			</a>-->
 </body>
 </html>

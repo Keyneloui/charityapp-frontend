@@ -13,8 +13,7 @@
 	<br />
 
 	<font color="white"><p>
-		<h1>Hi,Welcome to Revature Charity!</h1>
-		</p>
+		<h1>Hi,Welcome to Revature Charity Trust!</h1>
 		<p>
 		<h2>"Be charitable and indulgent to everyone but yourself"</h2>
 		</p></font>

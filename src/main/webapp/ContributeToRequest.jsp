@@ -20,15 +20,18 @@
 
 	<div id="result"></div>
 
-	<div class=container>
+	<div class="container"style="
+    opacity: 0.9;
+    background-color: black;
+    color: white;">
 		<p>
 		<h2>Donate a little!</h2>
 		</p>
 		<form onsubmit="loadRequest()">
 			<label>Request Type</label> <select id="requestType"><
-			</select> <br /> </select> <br /> <br /> <label>Amount You Want to
+			</select> <br />  <br /> <br /> <label>Amount You Want to
 				Contribute:</label> <input type="number" name="requestAmount"
-				id="requestAmount" placeholder="Enter amount" min="100"
+				id="requestAmount" placeholder="Enter amount" min="1"
 				max="1000000" required /> <br /> <br /> <input type="submit"
 				value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
@@ -47,45 +50,44 @@
 			
 			var user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
 			var userId=user.id;
+
+			//var request = JSON.parse(localStorage.getItem("REQUEST LIST"));
+			//var requestId=request.id;
+			
 			
 			var requestAmount = document.getElementById("requestAmount").value;
 			console.log("reqType=>"+requestType);
 			console.log("userID=>"+userId);
 			console.log("requestAmount=>"+requestAmount);
-			var formData = "requestType=" + requestType + "&userId=" + userId
-					+ "&requestAmount=" + requestAmount;
+			var formData = "userId=" + userId
+					+ "&requestAmount=" + requestAmount +"&requestId=" + requestType;
 			console.log(formData);
 			
 
-			var url = "http://localhost:8080/mavenwebb/ContributeRequest?"
-					+ formData;
+			var url = "http://localhost:9000/donor/ContributeToFundRequest?" + formData;
 			console.log(url);
-			
-			var formData = {};
-			
-			$
-					.get(
-							url,
-							function(response) {
-
-								console.log(response);
-								console.log(response.errorMessage);
-								var msg = JSON.parse(response);
-								
-
-								if (msg.errorMessage != null) {
-									alert("Invalid credentials");
-								} else {
-									
-									alert("Thank You for your contribution");
-
-									window.location.href = "?pageName=home.jsp";
-								}
+			   $.get(url).then(function(response) {
+			       console.log("success");
+			       console.log(response);
+			       var msg=response;
+			     if(msg!=null) {
+			    	 alert("ThankYou for your contribution");
+						window.location.href = "?pageName=home.jsp";
+			     }
+			   },
+			   function(response) {
+			       console.log("Error");
+			       console.log(response);
+			        var data = response.responseJSON;
+			       if (data != null) {
+			           alert(data.message);
+			          // window.location.href= "?pageName=ContributeToRequest.jsp";
+			       }
 							});
 
 		}
 		function loadRequestTypes(){
-			var url = "http://localhost:8080/mavenwebb/ListRequests";
+			var url = "http://localhost:9000/donor/listFundRequest";
 			$.getJSON(url).then ( function (response) {
 			var content = "";
 			for ( let dr of response){
@@ -94,7 +96,7 @@
 			
 			}
 			console.log(content);
-			document.getElementById("requestType").innerHTML= content;
+						document.getElementById("requestType").innerHTML= content;
 			});
 
 			}

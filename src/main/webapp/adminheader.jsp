@@ -42,11 +42,19 @@
 				<li class="nav-item"><a class="nav-link"
 					href="?pageName=updateRequest.jsp">Update Fund Request<span
 						class="sr-only">(current)</span></a></li>
+						<li class="nav-item"><a class="nav-link"
+					href="?pageName=adminTransaction.jsp">Admin Transactions <span
+						class="sr-only">(current)</span></a></li>
+						<li class="nav-item"><a class="nav-link"
+					href="?pageName=registeredDonor.jsp">Donor Details<span
+						class="sr-only">(current)</span></a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="?pageName=donorList.jsp">Donor List<span class="sr-only">(current)</span></a></li>
+					href="?pageName=donorList.jsp">Donor Donation Details<span class="sr-only">(current)</span></a></li>
 				<li class="nav-item"><a class="nav-link" href=""
 					onclick="logout()">Log out <span class="sr-only">(current)</span></a></li>
+				</ul>	
 		</div>
+		
 	</nav>
 </header>
 

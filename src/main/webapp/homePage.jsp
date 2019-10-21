@@ -14,10 +14,33 @@
 	<br />
 	<br />
 	<br />
+	<style>
+#detail {
+	font-size: 200%;
+}
+</style>
+	<div id="detail">
+		<div>
+			<div>
+				<div style="color: white" id="name"></div>
+			</div>
+			<script>
+				function displayName() {
+					var user = JSON.parse(localStorage
+							.getItem("LOGGED_IN_USER"));
+					var name = user.name;
+					document.getElementById("name").innerHTML = "Welcome";
+						
+					return name;
+				}
+				displayName();
+			</script>
+			<p><font color="white">Here you can view the fund request,add fund request,update fund request,view the Donor details
+			and Donor Donation details</font>
 
 
 
-	<a href="?pageName=listdonation.jsp"><h4>
+	<!--  <a href="?pageName=listdonation.jsp"><h4>
 			<font color="white">Fund Requests</a>
 	<br />
 	<br />
@@ -32,10 +55,15 @@
 	<br />
 	<br />
 
-	<a href="?pageName=donorList.jsp"> <font color="white">Donor
-			List</a>
+	<a href="?pageName=donorList.jsp"> <font color="white">Funded
+			Donors</a>
 	<br />
 	<br />
+	
+	<a href="?pageName=registeredDonor.jsp"> <font color="white">Registered
+			Donor</a>
+	<br />
+	<br />-->
 
 
 

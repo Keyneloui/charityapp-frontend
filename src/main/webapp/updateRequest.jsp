@@ -19,8 +19,11 @@
 	<br />
 	<br />
 	<br />
-	<div class=container>
-		<h3>Update Donation</h3>
+	<div class="container"style="
+    opacity: 0.9;
+    background-color: black;
+    color: white;">
+		<h3>Update Fund Request</h3>
 
 		<form onsubmit="loadRequest()">
 
@@ -29,7 +32,7 @@
 			<label>Request Type</label> <select id="requestType"><
 			</select> <br /> <br /> <label>Enter the amount you want to add:</label> <input
 				type="number" name="requestAmount" id="requestAmount"
-				placeholder="Enter amount" min="100" max="1000000" required /> <br />
+				placeholder="Enter amount" min="1" max="1000000" required /> <br />
 			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
@@ -44,42 +47,49 @@
 				function loadRequest() {
 				
 					event.preventDefault();
+					//var request = JSON.parse(localStorage.getItem("REQUEST LIST"));
+					//var requestId=request.id;
 					
 					var requestAmount = document
 					.getElementById("requestAmount").value;
 					
 					var requestType = document.getElementById("requestType").value;
+
+					var user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+					var userId=user.id;
 					
 
 					
 					var formData = "requestType=" + requestType
-							+ "&requestAmount=" + requestAmount;
+							+ "&requestAmount=" + requestAmount +"&adminId=" +userId;
 					console.log(formData);
-
-					var url = "http://localhost:8080/mavenwebb/UpdateRequest?"
-							+ formData;
+					var url = "http://localhost:9000/admin/raiseFundRequest/"+ requestType +"?" + formData;
 					console.log(url);
-				
-					var formData = {};
-					
-					$.get(url, function(response) {
-						console.log(response);
-						console.log(response.errorMessage);
-						
-						var msg = JSON.parse(response);
-											if (msg.errorMessage != null) {
-							alert("Please enter valid data");
-						} else {
-							alert("Request has been updated");
-							window.location.href = "?pageName=index.jsp";
-						}
+					   $.get(url).then(function(response) {
+					       console.log("success");
+					       console.log(response);
+					       var msg=response;
+					     if(msg!=null) {
+					    	 alert("Request has been updated");
+								window.location.href = "?pageName=homePage.jsp";
+					     }
+					   },
+					   function(response) {
+					       console.log("Error");
+					       console.log(response);
+					        var data = response.responseJSON;
+					       if (data != null) {
+					           alert("Request Type not found");
+					          // window.location.href= "?pageName=updateRequest.jsp";
+					       }
 
 					});
 
 				}
 
 				function loadRequestTypes(){
-					var url = "http://localhost:8080/mavenwebb/ListRequests";
+					
+					var url = "http://localhost:9000/admin/listFundRequest";
 					$.getJSON(url).then ( function (response) {
 					var content = "";
 					for ( let dr of response){

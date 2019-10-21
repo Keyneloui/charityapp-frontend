@@ -6,12 +6,13 @@
 <meta charset="ISO-8859-1">
 <title>Donor List</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/Counter.css">
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
 
 function loadBooks()
 {
-	var url = "http://localhost:8080/mavenwebb/DonorListServlet";
+	var url = "http://localhost:9000/admin/listDonorContribution";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";
@@ -19,10 +20,12 @@ function loadBooks()
 		    for(let dr of list){
 		        console.log(list);
 		        content += "<tr>";
-		      
-		        content += "<td>" + dr.name + "</td>";
-		        content += "<td>" + dr.requestType + "</td>";
-		        content += "<td>" + dr.amount + "</td>";
+		        content += "<td></td>"
+		        content += "<td>" + dr.donor.name + "</td>";
+		        content +="<td>"  + dr.donor.email +"</td>";
+		        content += "<td>" + dr.request.requestType + "</td>";
+		        content += "<td>" + dr.request.requestAmount + "</td>";
+		        content += "<td>" + dr.amountFunded + "</td>";
 		        content += "</tr>";
 		    }
 		    console.log(content); 
@@ -40,19 +43,24 @@ function loadBooks()
 	<br />
 
 	<form onsubmit="loadBooks()"></form>
-	<div class="container">
-		<h2>Donor List</h2>
+	<div class="container"style="
+    opacity: 0.9;
+    background-color: black;
+    color: white;">
+		<h2>Donor Donation Details</h2>
 		<div class="row">
 			<div class="col">
 				<div align="left">
 
-					<table border="1" class="table table-condensed" id="tbl">
+					<table border="1" class="table table-condensed text-light" id="tbl">
 
 						<thead>
 							<tr>
-
+                                <th>S.No</th>
 								<th>Name</th>
+								<th>Email</th>
 								<th>Fund Request</th>
+								<th>Target Amount</th>
 								<th>Amount Funded</th>
 							</tr>
 						</thead>

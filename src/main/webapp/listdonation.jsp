@@ -10,7 +10,7 @@
 <script>
 function loadRequest()
 {
-	var url = "http://localhost:8080/mavenwebb/ListRequests";
+	 var url="http://localhost:9000/admin/listFundRequest?";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";
@@ -21,9 +21,12 @@ function loadRequest()
 		        content += "<td>" + dr.id + "</td>";
 		        content += "<td>" + dr.requestType + "</td>";
 		        content += "<td>" + dr.requestAmount + "</td>";
+		        content += "<td>" + dr.date + "</td>";
 		        content += "</tr>";
 		    }
 		    console.log(content); 
+		    
+		  
 		    
 		    document.getElementById("tbody").innerHTML =  content;
 		});
@@ -39,18 +42,22 @@ function loadRequest()
 
 	<form onsubmit="loadRequest()"></form>
 	<div class="view" id="view"></div>
-	<div class="container">
-		<h2>Fund Requests</h2>
+	<div class="container"style="
+    opacity: 0.9;
+    background-color: black;
+    color: white;">
+		<h2>Fund Request</h2>
 		<div class="row">
 			<div class="col">
 				<div align="left">
 
-					<table border="1" class="table table-condensed" id="tbl">
+					<table border="1" class="table table-condensed  text-light" id="tbl">
 						<thead>
 							<tr>
 								<th>ID</th>
 								<th>Type</th>
-								<th>Amount</th>
+								<th>Amount(Rs)</th>
+								<th>Date</th>
 							</tr>
 						</thead>
 						<tbody id="tbody">
@@ -59,6 +66,7 @@ function loadRequest()
 					</table>
 				</div>
 			</div>
+		</div>
 		</div>
 		<script>
 		loadRequest();

@@ -13,67 +13,77 @@
 </head>
 <body style="text-align: center">
 
-	<jsp:include page="header.jsp"></jsp:include>
+	
 	<br />
 	<br />
 	<br />
 
 
 	<div id="result"></div>
-	<div class="container">
+	<div class="container"class="container" style="
+    opacity: 0.9;
+    background-color: black;
+    color: white;
+">
 		<h2>Donor Login</h2>
-		<form onsubmit="register()">
-			<label>Email:</label> <input type="email" name="email_id"
-				id="email_id" placeholder="Enter Email" required autofocus /><br />
+		<form onsubmit="login()">
+			<label>Email:</label> <input type="email" name="email"
+				id="email" placeholder="Enter Email" required autofocus /><br />
 			<br /> <label>Password:</label> <input type="password"
 				name="password" id="password" placeholder="Enter Password" required />
-			<br />
+				<div class="custom-control custom-checkbox mb-3">
+                     <input type="checkbox" class="custom-control-input" id="customCheck1">
+                     <label class="custom-control-label" for="customCheck1" onclick="myFunction()">Show password</label>
+                   </div>
+				
+			
 			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
 			<button type="reset" class="btn btn-danger" value="clear">clear
 			</button>
 			<br />
+			
 		</form>
 	</div>
 	<script>
-		function register() {
-			//alert('register');
-			event.preventDefault();
-
-			var email_id = document.getElementById("email_id").value;
-
-			var password = document.getElementById("password").value;
-
-			var formData = "email_id=" + email_id + "&password=" + password;
-			console.log(formData);
-			//alert(formData);
-			var url = "http://localhost:8080/mavenwebb/Logintest?" + formData;
-			console.log(url);
-			//alert(url);
-			var formData = {};
-			$
-					.get(
-							url,
-							function(response) {
-
-								console.log(response);
-								console.log(response.errorMessage);
-								var msg = JSON.parse(response);
-								//alert(msg);
-
-								if (msg.errorMessage != null) {
-									alert("Invalid Username/Password......Kindly Register");
-								} else {
-									alert("Login Success");
-									localStorage.setItem("LOGGED_IN_USER", JSON
-											.stringify(msg));
-									//localStorage.setItem("USERID",msg.id);
-									//localStorage.setItem("USERNAME",msg.name);
-									//localStorage.setItem("USEREMAIL",msg.email_id);
-									//localStorage.setItem("USERPASSWORD",msg.password);
-									window.location.href = "?pageName=home.jsp";
-								}
-							});
-		}
+		
+		function login(){
+			   event.preventDefault();
+			   var email = document.getElementById("email").value;
+			   var password = document.getElementById("password").value;
+			   var formData = "email=" + email + "&password=" + password ;
+			   console.log(formData);
+			   var url="http://localhost:9000/donor/login?"+formData;
+			   console.log(url);
+			   $.post(url).then(function(response) {
+			       console.log("success");
+			       console.log(response);
+			       var msg=response;
+			     if(msg!=null) {
+			           alert(" Login Success");
+			           localStorage.setItem("LOGGED_IN_USER", JSON
+								.stringify(msg));
+			             window.location.href = "?pageName=home.jsp";
+			     }
+			   },
+			   function(response) {
+			       console.log("Error");
+			       console.log(response);
+			        var data = response.responseJSON;
+			       if (data != null) {
+			           alert("Invalid email/password");
+			          // window.location.href= "?pageName=donorlog.jsp";
+			       }
+			   });
+			}
+		function myFunction() {
+			  var x = document.getElementById("password");
+			  if (x.type === "password") {
+			    x.type = "text";
+			  } else {
+			    x.type = "password";
+			  }
+			}
+			
 	</script>
 
 </body>
