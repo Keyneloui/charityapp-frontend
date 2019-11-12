@@ -10,7 +10,7 @@
 <script>
 function loadRequest()
 {
-	 var url="http://localhost:9000/admin/listFundRequest?";
+	 var url=server+"/admin/listFundRequest?";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";

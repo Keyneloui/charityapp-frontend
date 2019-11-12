@@ -29,7 +29,7 @@
 			<br />
 			<br /> <label>Request Type:</label> <input type="text"
 				name="requestType" id="requestType" placeholder="Enter request Type" 
-				 pattern="[A-Za-z]{1,32}"
+				 pattern="[A-Za-z\s]{1,32}"
 				title="Request type should be valid and must contain words only"
 				required autofocus /> <br /> <br />
 				
@@ -59,7 +59,7 @@
 					+ requestAmount +"&adminId=" +userId ;
 			console.log(formData);
 
-			var url = "http://localhost:9000/admin/raiseFundRequest?" + formData;
+			var url = server+"/admin/raiseFundRequest?" + formData;
 			console.log(url);
 			   $.get(url).then(function(response) {
 			       console.log("success");
@@ -73,10 +73,9 @@
 			   function(response) {
 			       console.log("Error");
 			       console.log(response);
-			        var data = response.responseJSON;
-			       if (data != null) {
-			           alert("Request Type already exists,Kindly enter a new request");
-			          // window.location.href= "?pageName=addrequest.jsp";
+			        var data = response;
+			        if (data.responseText!= null) {
+			            alert(data.responseJSON.message);
 			       }
 
 							});

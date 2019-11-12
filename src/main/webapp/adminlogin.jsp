@@ -18,7 +18,7 @@
 	<br />
 	<br />
 	<br />
-	<!--  <font color="red"><h2>Admin Login</h2></font>-->
+	
  <div class="container"style="
     opacity: 0.9;
     background-color: black;
@@ -28,7 +28,7 @@
 		<form onsubmit="login()">
 		
 			<label>Email:</label> <input type="email" name="email"
-				id="email" placeholder="Enter Email" required autofocus /> <br />
+				id="email" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z-]+\.[a-z]{2,}$"required autofocus /> <br />
 			<br /> <label>Password:</label> <input type="password"
 				name="password" id="password" placeholder="Enter Password" required />
 				<br/>
@@ -38,8 +38,8 @@
                    </div>
 				
 			
-			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
-			<button type="reset" class="btn btn-danger" value="clear">clear
+			<br /> <input type="submit" value="Login" class="btn btn-success">&nbsp;
+			<button type="reset" class="btn btn-danger" value="Reset">clear
 			</button>
 			<br />
 			
@@ -52,9 +52,10 @@
 		   var password = document.getElementById("password").value;
 		   var formData = "email=" + email + "&password=" + password ;
 		   console.log(formData);
-		   var url="http://localhost:9000/admin/login?"+formData;
+		   var url=server+"/admin/login?"+formData;
+		   var login=$.post(url);
 		   console.log(url);
-		   $.post(url).then(function(response) {
+		   login.then(function(response) {
 		       console.log("success");
 		       console.log(response);
 		       var msg=response;
@@ -65,13 +66,13 @@
 		             window.location.href = "?pageName=homePage.jsp";
 		     }
 		   },
+		   
 		   function(response) {
 		       console.log("Error");
 		       console.log(response);
-		        var data = response.responseJSON;
-		       if (data != null) {
-		           alert("Invalid email/password");
-		          // window.location.href= "?pageName=donorlog.jsp";
+		        var data = response;
+		        if (data.responseText!= null) {
+		            alert(data.responseJSON.message);
 		       }
 		   });
 		}

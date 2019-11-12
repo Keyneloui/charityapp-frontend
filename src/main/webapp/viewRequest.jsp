@@ -12,7 +12,7 @@
 function loadRequest()
 {
 	
-	var url="http://localhost:9000/donor/listFundRequest?";
+	var url=server+"/donor/listFundRequest?";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";

@@ -28,7 +28,7 @@
 		<h2>Donor Login</h2>
 		<form onsubmit="login()">
 			<label>Email:</label> <input type="email" name="email"
-				id="email" placeholder="Enter Email" required autofocus /><br />
+				id="email" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z-]+\.[a-z]{2,}$" required autofocus /><br />
 			<br /> <label>Password:</label> <input type="password"
 				name="password" id="password" placeholder="Enter Password" required />
 				<div class="custom-control custom-checkbox mb-3">
@@ -37,8 +37,8 @@
                    </div>
 				
 			
-			<br /> <input type="submit" value="Submit" class="btn btn-success">&nbsp;
-			<button type="reset" class="btn btn-danger" value="clear">clear
+			<br /> <input type="submit" value="Login" class="btn btn-success">&nbsp;
+			<button type="reset" class="btn btn-danger" value="Reset">clear
 			</button>
 			<br />
 			
@@ -52,7 +52,7 @@
 			   var password = document.getElementById("password").value;
 			   var formData = "email=" + email + "&password=" + password ;
 			   console.log(formData);
-			   var url="http://localhost:9000/donor/login?"+formData;
+			   var url=server+"/donor/login?"+formData;
 			   console.log(url);
 			   $.post(url).then(function(response) {
 			       console.log("success");
@@ -68,10 +68,9 @@
 			   function(response) {
 			       console.log("Error");
 			       console.log(response);
-			        var data = response.responseJSON;
-			       if (data != null) {
-			           alert("Invalid email/password");
-			          // window.location.href= "?pageName=donorlog.jsp";
+			        var data = response;
+			        if (data.responseText!= null) {
+			            alert(data.responseJSON.message);
 			       }
 			   });
 			}

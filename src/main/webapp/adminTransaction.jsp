@@ -11,7 +11,7 @@
 <script>
 function loadRequest()
 {
-	 var url="http://localhost:9000/admin/listAdminTransaction?";
+	 var url=server+"/admin/listAdminTransaction?";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";

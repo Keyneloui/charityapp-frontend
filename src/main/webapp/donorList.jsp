@@ -12,7 +12,7 @@
 
 function loadBooks()
 {
-	var url = "http://localhost:9000/admin/listDonorContribution";
+	var url = server+"/admin/listDonorContribution";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";
@@ -60,8 +60,8 @@ function loadBooks()
 								<th>Name</th>
 								<th>Email</th>
 								<th>Fund Request</th>
-								<th>Target Amount</th>
-								<th>Amount Funded</th>
+								<th>Total Amount(Rs)</th>
+								<th>Donated Amount(Rs)</th>
 							</tr>
 						</thead>
 						<tbody id="tbody">

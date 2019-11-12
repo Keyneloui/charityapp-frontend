@@ -64,7 +64,7 @@
 			console.log(formData);
 			
 
-			var url = "http://localhost:9000/donor/ContributeToFundRequest?" + formData;
+			var url = server+"/donor/ContributeToFundRequest?" + formData;
 			console.log(url);
 			   $.get(url).then(function(response) {
 			       console.log("success");
@@ -78,10 +78,9 @@
 			   function(response) {
 			       console.log("Error");
 			       console.log(response);
-			        var data = response.responseJSON;
-			       if (data != null) {
-			           alert(data.message);
-			          // window.location.href= "?pageName=ContributeToRequest.jsp";
+			        var data = response;
+			        if (data.responseText!= null) {
+			            alert(data.responseJSON.message);
 			       }
 							});
 

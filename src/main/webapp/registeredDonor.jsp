@@ -14,7 +14,7 @@
 <script>
 function loadRequest()
 {
-	 var url="http://localhost:9000/admin/listRegisteredDonor?";
+	 var url=server+"/admin/listRegisteredDonor?";
 		$.getJSON(url, function(response){
 		    var list = response;
 		    document.getElementById("tbody").innerHTML = "";

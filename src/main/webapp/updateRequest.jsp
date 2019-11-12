@@ -47,8 +47,7 @@
 				function loadRequest() {
 				
 					event.preventDefault();
-					//var request = JSON.parse(localStorage.getItem("REQUEST LIST"));
-					//var requestId=request.id;
+					
 					
 					var requestAmount = document
 					.getElementById("requestAmount").value;
@@ -63,7 +62,7 @@
 					var formData = "requestType=" + requestType
 							+ "&requestAmount=" + requestAmount +"&adminId=" +userId;
 					console.log(formData);
-					var url = "http://localhost:9000/admin/raiseFundRequest/"+ requestType +"?" + formData;
+					var url = server+"/admin/updateFundRequest/"+ requestType +"?" + formData;
 					console.log(url);
 					   $.get(url).then(function(response) {
 					       console.log("success");

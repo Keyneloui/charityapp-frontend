@@ -2,6 +2,7 @@
 <head>
   <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="text-align: center" class="img">
